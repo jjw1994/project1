@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <include file="Public/head"/>
+
+    <!--private head-->
+    <meta name="description" content="lsgogroup"/>
+    <meta name="keywords" content="lsgogroup"/>
+    <meta name="author" content="Aidan Dai, webaidandai@gmail.com, www.aidandai.com"/>
+    <link rel="stylesheet" type="text/css" href="__COMMON__/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/perletter.css"/>
+    <link rel="stylesheet" type="text/css" href="__COMMON__/css/public.css">
+    <link rel="stylesheet" type="text/css" href="__COMMON__/css/blog-bar.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+    <!--/private head-->
+</head>
+<body>
+	<div class="main">
+		<div class="content">
+			<!-- 放头部两层头文件 -->
+			<include file="Public/head_nav"/>
+			<include file="Public/secbar"/>
+			<div class="personal">
+				<div class="myletter">
+					<p>我的私信</p>
+				</div>
+				<div class="letblock">
+					<div class="left">
+						<img src="__ROOT__/Uploads/Picture/headimg/default/default1.jpg" alt="用户头像" title="用户头像" class="headimg" >
+					</div>
+					<div class="right">
+						<div class="username">曾轶可&nbsp:&nbsp</div>
+						<div class="detail">
+							<p>阅读的新知，是否带你领略了更广阔的世界？</p><br/>
+							<p>关注的他人，是否让你领略了生活的千差万别？</p><br/>
+							<p>希望这一年，你因lsgo而有所收获。</p>
+						</div>
+						<div class="data">
+							<h6>9月6号&nbsp&nbsp14:28</h6>
+						</div>
+						<div class="dialogue">
+							<h6><a href="">共一条对话</a>&nbsp|&nbsp<a href="">回复</a>&nbsp|&nbsp<a href="">删除</a></h6>
+						</div>
+					</div>
+				</div>
+				<div class="letblock">
+					<div class="left">
+						<img src="__ROOT__/Uploads/Picture/headimg/default/default1.jpg" alt="用户头像" title="用户头像" class="headimg" >
+					</div>
+					<div class="right">
+						<div class="username">曾轶可&nbsp:&nbsp</div>
+						<div class="detail">
+							<p>阅读的新知，是否带你领略了更广阔的世界？</p><br/>
+							<p>关注的他人，是否让你领略了生活的千差万别？</p><br/>
+							<p>希望这一年，你因lsgo而有所收获。</p>
+						</div>
+						<div class="data">
+							<h6>9月6号&nbsp&nbsp14:28</h6>
+						</div>
+						<div class="dialogue">
+							<h6><a href="">共一条对话</a>&nbsp|&nbsp<a href="">回复</a>&nbsp|&nbsp<a href="">删除</a></h6>
+						</div>
+					</div>
+				</div>
+				<div class="letblock">
+					<div class="left">
+						<img src="__ROOT__/Uploads/Picture/headimg/default/default1.jpg" alt="用户头像" title="用户头像" class="headimg" >
+					</div>
+					<div class="right">
+						<div class="username">曾轶可&nbsp:&nbsp</div>
+						<div class="detail">
+							<p>阅读的新知，是否带你领略了更广阔的世界？</p><br/>
+							<p>关注的他人，是否让你领略了生活的千差万别？</p><br/>
+							<p>希望这一年，你因lsgo而有所收获。</p>
+						</div>
+						<div class="data">
+							<h6>9月6号&nbsp&nbsp14:28</h6>
+						</div>
+						<div class="dialogue">
+							<h6><a href="">共一条对话</a>&nbsp|&nbsp<a href="">回复</a>&nbsp|&nbsp<a href="">删除</a></h6>
+						</div>
+					</div>
+				</div>
+				<div class="letblock">
+					<div class="left">
+						<img src="__ROOT__/Uploads/Picture/headimg/default/default1.jpg" alt="用户头像" title="用户头像" class="headimg" >
+					</div>
+					<div class="right">
+						<div class="username">曾轶可&nbsp:&nbsp</div>
+						<div class="detail">
+							<p>阅读的新知，是否带你领略了更广阔的世界？</p><br/>
+							<p>关注的他人，是否让你领略了生活的千差万别？</p><br/>
+							<p>希望这一年，你因lsgo而有所收获。</p>
+						</div>
+						<div class="data">
+							<h6>9月6号&nbsp&nbsp14:28</h6>
+						</div>
+						<div class="dialogue">
+							<h6><a href="">共一条对话</a>&nbsp|&nbsp<a href="">回复</a>&nbsp|&nbsp<a href="">删除</a></h6>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	<include file="Public/footer"/>
+</div>	
+</body>
+</html>

@@ -1,0 +1,243 @@
+<?php
+/**
+ *  +----------------------------------------------------------------------
+ *  | LSGOPHPFileInfo
+ *  +----------------------------------------------------------------------
+ *  | Copyright (c) LSGOGroup
+ *  +----------------------------------------------------------------------
+ *  | Author: AidanDai
+ *  +----------------------------------------------------------------------
+ *  | Date: 2015/10/22
+ *  +----------------------------------------------------------------------
+ *  | Time: 22:25
+ *  +----------------------------------------------------------------------
+ */
+
+namespace Blog\Model;
+use Think\Model;
+
+/**
+ * Class DocumentModel
+ * handel article
+ * @package Blog\Mode
+ */
+class DocumentModel extends Model{
+
+    /**
+     * LSGOPHPFunctionInfo
+     * function introduce:get defualt articles
+     * @param number $cate
+     * @return array $data
+     * @author Aidan Dai
+     */
+    public function DefualtArticles($cate = 2){
+
+        $map['category_id'] =  $cate;
+        $map['display'] = 1;
+        $map['status'] = 1;
+
+        $articles = $this->where($map)->field('id,title,category_id,create_time')->order()->limit('5')->select();
+
+        foreach ($articles as &$value) {
+            $value['time'] = date('Y-m-d', $value['create_time']);
+            unset($value['create_time']);
+        }
+
+        $length = $this->where($map)->count();
+
+        $data = array(
+            'count' =>  $length,
+            'data'  =>  $articles
+        );
+
+        return $data;
+    }
+
+    /**
+     * LSGOPHPFunctionInfo
+     * function introduce:get new articles
+     * @param array $post number $length
+     * @return array $result
+     * @author Aidan Dai
+     */
+    public function changeArticle($post, $length){
+        $post['count'] = $length;
+
+        $map['category_id'] = $post["category"];
+        $map['display'] = 1;
+        $map['status'] = 1;
+
+        if($post["tag"]){
+            $map['defualt_tag_id'] = $post["tag"];
+        }
+
+        $list = $this->where($map)->field('id,category_id,title,update_time')->order('create_time')->select();
+        foreach ($list as &$value) {
+            $value['update_time'] = date("Y-m-d",$value["update_time"]);
+        }
+        $count = count($list);
+
+        if($post['change']){
+            //click change
+            if ($count < $post["count"]) {
+                $array = $list;
+            } else {
+                //shuffle()函数把数组中的元素按随机顺序重新排列。
+                shuffle($list);
+                $array = array_slice($list,0,5);
+            }
+        }else{
+            //mouseover tag
+            $array = array_slice($list,0,5);
+        }
+
+        $result = array(
+            'count' =>  $count,
+            'html'    =>  $this->getString($array),
+        );
+        return $result;
+    }
+
+    /**
+     * LSGOPHPFunctionInfo
+     * function introduce:handel article lists to string
+     * @param array $data
+     * @return string $text
+     * @author Aidan Dai
+     */
+    private function getString($data){
+        $html = "";
+        foreach($data as $key => $value){
+            $html .= '<li class="article-item">
+                            <a href="'.$_SERVER['PHP_SELF'].'?s=/Blog/Article/index/id/'.$value['id'].'.html" target="_self">
+                                <span class="article-time">'.$value['update_time'].'</span>
+                                <span class="article-title">'.$value['title'].'</span>
+                            </a>
+                      </li>';
+        }
+        return $html;
+    }
+
+    /**
+     * LSGOPHPFunctionInfo
+     * function introduce:blog article nav
+     * @param number $article_id
+     * @return array $nav
+     * @author Aidan Dai
+     */
+    public function articleNav($article_id){
+
+        $map['id'] = $article_id;
+        $info = $this->where($map)->field("defualt_tag_id,category_id")->find();
+
+        $category = D("category");
+        $map1["id"] = $info["category_id"];
+        $title = $category->where($map1)->getField("title");
+
+        $blog_article_tag = D("blog_article_tag");
+        $map2["id"] = $info["defualt_tag_id"];
+        $tag = $blog_article_tag->where($map2)->getField("tag_name");
+
+        $nav = array(
+            0   => array(
+                "name"  =>      "全部博客",
+                "url"   =>      "Blog/Index/index"
+            ),
+            1   =>  array(
+                "name"  =>       $title,
+                "url"   =>      "Blog/Article/lists/category/".$info["category_id"]
+            ),
+            2   =>  array(
+                "name"  =>      $tag,
+                "url"   =>      "Blog/Article/lists/tag/".$info["defualt_tag_id"]
+            ),
+            3   => array(
+                "name"  =>      "详情",
+            )
+        );
+        return $nav;
+    }
+    /**
+     * LSGOPHPFunctionInfo
+     * function introduce:show article content
+     * @param number $id
+     * @return array $content
+     * @author Aidan Dai
+     */
+    public function content($id){
+
+        $document = D('document');
+        $document_article = D('document_article');
+        $ucenter_member = D('ucenter_member');
+        $picture = D('picture');
+        $blog_article_tag = D('blog_article_tag');
+
+        $map1['id'] = $id;
+        $map1['status'] = 1;
+        $map1['display'] = 1;
+
+        $articleInfo = $document->where($map1)->field('id,tag_ids,uid,title,description,view,comment,create_time')->find();
+
+        $articleInfo['time'] = date('Y-m-d H:i-s',$articleInfo['create_time']);
+        unset($articleInfo['create_time']);
+
+        $map2['id'] = $articleInfo['uid'];
+        $articleInfo['username'] = $ucenter_member->where($map2)->getField('username');
+
+        $map3['id'] = $ucenter_member->where($map2)->getField('head_picture_id');
+        $articleInfo['userheadimg'] = $picture->where($map3)->getField('path');
+
+        $map4['id'] = $id;
+        $articleInfo['content'] = $document_article->where($map4)->getField('content');
+        $articleInfo['bookmark'] = $document_article->where($map4)->getField('bookmark');
+        $articleInfo['mdeditor'] = $document_article->where($map4)->getField('mdeditor');
+        $articleInfo['like'] = $document_article->where($map4)->getField('like');
+
+
+        $arr_tag_ids = explode(',',$articleInfo['tag_ids']);
+
+        $length = count($arr_tag_ids);
+        $arr_tag_name = array();
+        for($i = 0;$i < $length; $i++){
+            $map12['id'] = $arr_tag_ids[$i];
+            array_push($arr_tag_name,$blog_article_tag->where($map12)->getField('tag_name'));
+        }
+
+        $content = array(
+            "info"  =>   $articleInfo,
+            "tag"   =>  $arr_tag_name
+        );
+
+        return $content;
+    }
+
+    /**
+     * LSGOPHPFunctionInfo
+     * function introduce:get author info and article
+     * @param number $uid
+     * @return array $author
+     * @author Aidan Dai
+     */
+    public function relativeAuthor($uid){
+        $ucenter_member = D("ucenter_member");
+        $picture = D("picture");
+
+        $map['id'] = $uid;
+        $user = $ucenter_member->where($map)->field("username,head_picture_id")->find();
+
+        $map2['id'] = $user["head_picture_id"];
+        unset($user["head_picture_id"]);
+        $user["head"] = $picture->where($map2)->getField("path");
+
+        $map1['status'] = 1;
+        $map1['uid'] = $uid;
+        $list = $this->where($map1)->field('id,title')->order("create_time desc")->limit(10)->select();
+
+        $author = array(
+            "info"  =>  $user,
+            "list"  =>  $list
+        );
+
+        return $author;
+    }
+}

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <include file="Public/head"/>
+
+    <!--private head-->
+    <title>LSGO-以大多数人的努力程度之低，根本轮不到拼天赋...</title>
+    <meta name="description" content="lsgogroup"/>
+    <meta name="keywords" content="lsgogroup"/>
+    <meta name="author" content="Aidan Dai, webaidandai@gmail.com, www.aidandai.com"/>
+    <link rel="stylesheet" type="text/css" href="__COMMON__/css/common.css"/>
+    <link rel="stylesheet" type="text/css" media="only screen and (min-width:1000px)" href="__CSS__/userinfo.css"/>
+    <!--/private head-->
+</head>
+<body>
+<div id="wrap">
+    <div id="content">
+        <div id="header">header</div>
+        <div id="main">
+            <div class="left">
+                <div class="userinfo">
+                    <img class="headimg" src="__ROOT__/Uploads/Picture/headimg/1.png" alt="用户头像" title="用户头像">
+                    <h2>大师兄嘉图</h2>
+                    <p>简介：我们的征途是星辰大海</p>
+                    <br/>
+                    <p><a href=""><img src="__ROOT__/Public/Home/images/personal_letter.png" class="personal_letter"></a></p>
+                </div>
+                <div class="article">
+                    <h2>文章</h2>
+                    <br/>
+                    <div class="sub_article">
+                        <h3>UI设计师应该掌握的只是体系及职业规划</h3>
+                        <div class="sub_content">
+                            <div class="view">200</div>
+                            <div class="detail">
+                                <p>诺基亚（Nokia Corporation）是一家 ，主要从事移动通信产品生产的跨国公司。最后发展成为一家手机制造商。。。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="sub_article">
+                        <h3>UI设计师应该掌握的只是体系及职业规划</h3>
+                        <div class="sub_content">
+                            <div class="view">200</div>
+                            <div class="detail">
+                                <p>诺基亚（Nokia Corporation）是一家 ，主要从事移动通信产品生产的跨国公司。最后发展成为一家手机制造商。。。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="sub_article">
+                        <h3>UI设计师应该掌握的只是体系及职业规划</h3>
+                        <div class="sub_content">
+                            <div class="view">200</div>
+                            <div class="detail">
+                                <p>诺基亚（Nokia Corporation）是一家 ，主要从事移动通信产品生产的跨国公司。最后发展成为一家手机制造商。。。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="collection">
+                    <h2>收藏</h2>
+                    <br/>
+                    <div class="sub_article">
+                        <h3>UI设计师应该掌握的只是体系及职业规划</h3>
+                        <div class="sub_content">
+                            <div class="view">200</div>
+                            <div class="detail">
+                                <p>诺基亚（Nokia Corporation）是一家 ，主要从事移动通信产品生产的跨国公司。最后发展成为一家手机制造商。。。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="sub_article">
+                        <h3>UI设计师应该掌握的只是体系及职业规划</h3>
+                        <div class="sub_content">
+                            <div class="view">200</div>
+                            <div class="detail">
+                                <p>诺基亚（Nokia Corporation）是一家 ，主要从事移动通信产品生产的跨国公司。最后发展成为一家手机制造商。。。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="sub_article">
+                        <h3>UI设计师应该掌握的只是体系及职业规划</h3>
+                        <div class="sub_content">
+                            <div class="view">200</div>
+                            <div class="detail">
+                                <p>诺基亚（Nokia Corporation）是一家 ，主要从事移动通信产品生产的跨国公司。最后发展成为一家手机制造商。。。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="new_state">
+                    <h2>最新动态</h2>
+                    <br/>
+                    <div class="sub_article">
+                        <h3>UI设计师应该掌握的只是体系及职业规划</h3>
+                        <div class="sub_content">
+                            <div class="view">200</div>
+                            <div class="detail">
+                                <p>诺基亚（Nokia Corporation）是一家 ，主要从事移动通信产品生产的跨国公司。最后发展成为一家手机制造商。。。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="sub_article">
+                        <h3>UI设计师应该掌握的只是体系及职业规划</h3>
+                        <div class="sub_content">
+                            <div class="view">200</div>
+                            <div class="detail">
+                                <p>诺基亚（Nokia Corporation）是一家 ，主要从事移动通信产品生产的跨国公司。最后发展成为一家手机制造商。。。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="sub_article">
+                        <h3>UI设计师应该掌握的只是体系及职业规划</h3>
+                        <div class="sub_content">
+                            <div class="view">200</div>
+                            <div class="detail">
+                                <p>诺基亚（Nokia Corporation）是一家 ，主要从事移动通信产品生产的跨国公司。最后发展成为一家手机制造商。。。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                </div>
+                <div class="more">
+                    <button>加载更多</button>
+                </div>
+            </div>
+            <div class="right">
+                <div class="recomment">
+                    <div class="hot">热门推荐</div>
+                    <div class="change"><a href="">换一换</a></div>
+                </div>
+                <div class="re_content">
+                    <p>UI设计师应该掌握的只是体系及职业规</p>
+                    <p>UI设计师应该掌握的只是体系及职业规</p>
+                    <p>UI设计师应该掌握的只是体系及职业规</p>
+                    <p>UI设计师应该掌握的只是体系及职业规</p>
+                    <p>UI设计师应该掌握的只是体系及职业规</p>
+                    <p>UI设计师应该掌握的只是体系及职业规</p>
+                </div>
+                <div class="extra">
+                    <div class="blog">
+                        <img src="__ROOT__/Public/Home/images/blog.png">&nbsp;&nbsp;写博客
+                    </div>
+                    <div class="document">
+                        <img src="__ROOT__/Public/Home/images/document.png">&nbsp;&nbsp;我的文档
+                    </div>
+                    <div class="draft">
+                        <img src="__ROOT__/Public/Home/images/draft.png">&nbsp;&nbsp;草稿箱
+                    </div>
+                </div>
+                <div class="ads">
+                    <img src="__ROOT__/Uploads/Picture/headimg/1.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

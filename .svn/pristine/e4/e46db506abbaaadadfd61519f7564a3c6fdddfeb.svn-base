@@ -1,0 +1,76 @@
+<div class="setting-wrap">
+	<form action="__CONTROLLER__/pwdChange/uid/{$uid}" name="myform" method="post">
+		<div class="info-line">
+			<label class="lable-name">当前密码</label>
+			<span id="localpwd" style="color:red;font-size:12px;"></span><br>
+			<div class="info-text">
+				<input type="password" class="info-input" name="lp" placeholder="请输入当前密码" onblur="localpwd(this)">
+			</div>
+		</div>
+		<div class="info-line">
+			<label class="lable-name">新密码</label>
+			<span id="newpwd" style="color:red;font-size:12px;"></span><br>
+			<div class="info-text">
+				<input type="password" class="info-input" name="np" placeholder="请输入密码" onblur="newpwd(this)">
+			</div>
+		</div>
+		<div class="info-line">
+			<label class="lable-name">确认密码</label>
+			<span id="repeatpwd" style="color:red;font-size:12px;"></span><br>
+			<div class="info-text">
+				<input type="password" class="info-input" name="rp" placeholder="请输入密码" onblur="repeatpwd(this,document.myform.np )">
+			</div>
+		</div>
+		<input type="submit" value="保存" class="sava-pwd" onclick="return checkall(document.myform)">
+	</form>
+</div>
+<script type="text/javascript">
+var rgPassword = /^[a-zA-Z0-9!@#$%^&*-_]{6,16}$/;
+function localpwd(obj){
+	var zhi=document.getElementById('localpwd');
+	zhi.innerHTML='';
+	//alert(rgPassword.test(obj.value));
+	if(!rgPassword.test(obj.value)){
+		zhi.innerHTML='请输入6-16位密码，区分大小写，不能使用空格！';
+		return false;
+		exit;
+	}else{
+		return true;
+	}
+}
+
+	function newpwd(obj){
+		var zhi=document.getElementById('newpwd');
+		zhi.innerHTML='';
+		if(!rgPassword.test(obj.value)){
+			zhi.innerHTML='请输入6-16位密码，区分大小写，不能使用空格！';
+			return false;
+		}else{
+			//zhi.innerHTML='√';
+			return true;
+		
+		}
+
+	}
+
+	function repeatpwd(obj,obj2){
+		//console.log(obj2);
+		var zhi=document.getElementById('repeatpwd');
+		zhi.innerHTML='';
+		if(obj.value!=obj2.value){
+			zhi.innerHTML='两次密码不一致';
+			return false;
+			//exit;
+		}else{
+				return true;
+		}
+	}
+	function checkall(obj){
+		if(obj.lp.value&&rgPassword.test(obj.np.value)&&(obj.np.value==obj.rp.value)){
+			return true;
+		}else{
+			return false;	
+		}
+	}
+	
+</script>

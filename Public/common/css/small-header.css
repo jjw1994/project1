@@ -1,0 +1,126 @@
+header{
+    width: 100%;
+    height: 2rem;
+    background-color: #00A185;
+}
+.header-warpper{
+    width: 100%;
+    height: 100%;
+}
+div#logo{
+    margin: 0 0 0 2%;
+    float: left;
+    width: 2rem;
+    height: 2rem;
+    background-image: url("../images/logo.png");
+    background-size: contain;
+}
+a.logo{
+    display: block;
+    width: 2rem;
+    height: 2rem;
+}
+.menu-control a{
+    float: right;
+    width: 2rem;
+    height: 2rem;
+    margin: 0 2% 0 0;
+    background-image: url("../images/menu_control.png");
+    background-size: 30px 30px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+.menu-control-h a{
+    float: right;
+    width: 2rem;
+    height: 2rem;
+    margin: 0 2% 0 0;
+    background-image: url("../images/menu_control_h.png");
+    background-size: 30px 30px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+.all-nav{
+    display: none;
+    position: absolute;
+    top: 2rem;
+    width: 100%;
+    height: auto;
+    background-color: #333;
+}
+#search{
+    width: 100%;
+    height: 1.8rem;
+}
+.seo-tip{
+    display: none;
+}
+.search-input{
+    width: 90%;
+    height: 1rem;
+    margin: 0 4%;
+    line-height: 1rem;
+    font-size: 16px;
+    border-radius: 24px;
+    background-color: #2e2e2e;
+    border: 2px solid #3f3f3f;
+    background-image: url("../images/search.png");
+    background-repeat: no-repeat;
+    background-position: 98% 50%;
+}
+.search-input:focus{
+    width: 88%;
+    padding: 0 0 0 2%;
+    background-color: #ddd;
+    outline: none;
+}
+#menu>li:not(:first-child){
+    height: 48px;
+    line-height: 48px;
+}
+#menu>li{
+    width: 100%;
+    border-top: 1px solid #444;
+}
+#menu>li>a{
+    display: block;
+    height: 48px;
+    line-height: 49px;
+    font-size: 16px;
+    color: #999;
+    text-indent: 16px;
+}
+#menu>li>a:hover{
+    color: #fff;
+}
+#menu li.blog-menu{
+    height: 102px !important;
+    margin-bottom: 12px;
+    position: relative;
+}
+.big-blog-nav{
+    display: none;
+}
+li.blog-menu .blog-nav{
+    width: 90%;
+    position: absolute;
+    top: 10px;
+    left: 10%;
+}
+.blog-nav li{
+    height: 30px;
+    line-height: 30px;
+    width: 50%;
+    float: left;
+}
+.blog-nav li>a{
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    color: #999;
+    text-indent: 16px;
+}
+.blog-nav li>a:hover{
+    color: #fff;
+}

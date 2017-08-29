@@ -1,0 +1,71 @@
+<div class="setting-wrap">
+	<form>
+		<div class="info-line">
+			<label class="lable-name">昵称</label>
+			<div class="info-text">
+				<input type="text" class="info-input">
+			</div>
+		</div>
+		<div class="info-line">
+			<label class="lable-name">职位</label>
+			<div class="info-text">
+				<select class="info-job">
+					<option value>请选择职位</option>
+					<option value="1">前端工程师</option>
+					<option value="2">APP开发</option>
+					<option value="3">web开发</option>
+					<option value="4">地理信息系统</option>
+					<option value="5">其他</option>
+				</select>
+			</div>
+		</div>
+		<div class="info-line">
+			<label class="lable-name">城市</label>
+			<div class="info-text">
+				<select class="info-province">
+					<option value>选择省份</option>
+					<option value="1">北京</option>
+					<option value="2">南京</option>
+					<option value="3">天津</option>
+					<option value="4">河北</option>
+				</select>
+				<select class="info-city">
+					<option value>选择城市</option>
+					<option value="1">北京</option>
+					<option value="2">南京</option>
+					<option value="3">天津</option>
+					<option value="4">河北</option>
+				</select>
+				<select class="info-area">
+					<option value>选择区县</option>
+					<option value="1">北京</option>
+					<option value="2">南京</option>
+					<option value="3">天津</option>
+					<option value="4">河北</option>
+				</select>
+			</div>
+		</div>
+		<div class="info-line">
+			<label class="lable-name">性别</label>
+			<div class="info-text">
+				<div class="sex-select">
+					<form method="get">
+  						<input type="radio" name="sex" value="secret" 
+  						class="info-sex"/>保密
+  						<input type="radio" name="sex" value="male" 
+  						class="info-sex"/>男
+  						<input type="radio" name="sex" value="male" 
+  						class="info-sex"/>女
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="info-line">
+			<label class="lable-name">个签</label>
+			<div class="info-text">
+				<textarea type="text" class="state-massage"></textarea>
+			</div>
+		</div>
+		<input type="submit" value="保存" class="sava-data"/>
+	</form>
+</div>

@@ -1,0 +1,72 @@
+/*blog-nav*/
+.big-blog-nav-warpper{
+    width: 100%;
+    min-width: 1000px;
+    height: 40px;
+    background-color: #333;
+}
+.big-blog-nav{
+    width: 1000px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+.big-blog-nav li{
+    float: left;
+    font-size: 16px;
+    height: 100%;
+}
+.big-blog-nav li a{
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 15px;
+    font-size: 14px;
+    color: #fff;
+}
+.big-blog-nav li a.blog-logo{
+    padding: 0;
+}
+#blog-logo{
+    height: 40px;
+    margin: 0 4%;
+    padding: 0;
+}
+.blog-active{
+    background-color: #6d7277;
+}
+.blog-search{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 40px;
+    width: 200px;
+    height: 100%;
+}
+.blog-search{
+    width: 200px;
+    height: 100%;
+    margin: 0 4% 0 0;
+}
+.blog-seo-tip{
+    display: none;
+}
+.blog-search-input {
+    position: relative;
+    top: 0;
+    left: 0;
+    border: 1px solid #fff;
+    border-radius: 12px;
+    padding: 0 30px 0 12px;
+    height: 24px;
+    margin: 8px 0;
+    width: 80%;
+    outline: none;
+    background-color: #333;
+    background-image: url("../../common/images/search.png");
+    background-repeat: no-repeat;
+    background-position: 98% 50%;
+}
+.blog-search-input:focus{
+    background-color: #fff;
+}

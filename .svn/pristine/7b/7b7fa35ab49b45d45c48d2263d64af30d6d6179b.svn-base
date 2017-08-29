@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+	<head>
+	    <meta charset="utf-8"/>
+	    <title></title>
+	    <meta name="description" content=""/>
+	    <meta name="keywords" content=""/>
+	    <meta name="author" content="Aidan Dai, webaidandai@gmail.com, www.aidandai.com"/>
+	    <meta name="robots" content="all"/>
+	    <link rel="stylesheet" type="text/css" href="__COMMON__/css/common.css"/>
+    	<link rel="stylesheet" type="text/css" href="__CSS__/perletter.css"/>
+    	<link rel="stylesheet" type="text/css" href="__COMMON__/css/public.css"/>
+    	<link rel="stylesheet" type="text/css" href="__COMMON__/css/menu.css"/>
+    	<link rel="stylesheet" type="text/css" href="__COMMON__/css/user-base.css">
+	    <link rel="shortcut icon" type="image/x-icon" href="__PUBLIC__/favicon.ico"/>
+	    <link rel="stylesheet" type="text/css" href="__CSS__/newuser.css">
+	</head>
+	<body>
+		<!-- header -->
+			<include file="Public/menu" />
+		<!-- /header -->
+		<!-- nav -->
+			<!-- <include file="Public/secbar" /> -->
+		<!-- /nav -->
+		<section class="user-section">
+			<block name="main"></block>
+		</section>
+		<include file="Public/var" />
+		<footer>
+			<include file="Public/footer" />	
+		</footer>
+	</body>
+</html>

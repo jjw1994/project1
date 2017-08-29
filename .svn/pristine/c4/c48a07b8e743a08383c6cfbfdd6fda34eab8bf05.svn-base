@@ -1,0 +1,12 @@
+<!-- header -->
+<header>
+	<div class="head">
+		<div class="logo">
+			<a class="logo" href="__ROOT__/index.php?s=/Blog/Index/index.html" target="_self"></a>
+		</div>
+		<div class="search">
+			<input type="text" placeholder="搜索内容"></input>
+			<a href="##" class="search-icon"><span class="glyphicon glyphicon-search"></span></a>
+		</div>
+	</div>
+</header>

@@ -1,0 +1,62 @@
+<div class="user-article">
+	<!-- <span class="section-title">文章</span> -->
+	<ul class="atricle-list">
+		<li>
+			<a href="">
+				<div class="tags">
+					<span class="unique">web开发</span>
+					<span class="unique">ui设计</span>
+				</div>
+				<a class="particular-head">
+					UI设计师应掌握的知识体系及职业规划规划
+				</a>
+				<div class="articale-info">
+					<span class="author-name">作者：zp1996323</span>
+					<span class="right-info">
+						<span class="update-time">
+							2015-10-28 22:38
+						</span>
+						<span class="view">
+							阅读: <span class="number">(254)</span>
+						</span>
+						<span class="view">
+							评论: <span class="number">(254)</span>
+						</span>
+					</span>
+				</div>
+<!-- 				<span class="read-number">
+					231
+				</span>
+				<span class="particular-content">
+					UI设计师应掌握的知识体系及职业规划UI设计师应掌握的知识体系UI设计师应掌握的知识体系及职业规划UI设计师应掌握的知识体系及职业规划UI设计师应掌握的知识体系UI设计师应掌握的
+				</span> -->
+			</a>	
+		</li>
+		<!-- <li>
+			<a href="">
+				<span class="particular-head">
+					UI设计师应掌握的知识体系及职业规划
+				</span>
+				<span class="read-number">
+					231
+				</span>
+				<span class="particular-content">
+					UI设计师应掌握的知识体系及职业规划UI设计师应掌握的知识体系UI设计师应掌握的知识体系及职业规划UI设计师应掌握的知识体系及职业规划UI设计师应掌握的知识体系UI设计师应掌握的
+				</span>
+			</a>	
+		</li>
+		<li>
+			<a href="">
+				<span class="particular-head">
+					UI设计师应掌握的知识体系及职业规划
+				</span>
+				<span class="read-number">
+					231
+				</span>
+				<span class="particular-content">
+					UI设计师应掌握的知识体系及职业规划UI设计师应掌握的知识体系UI设计师应掌握的知识体系及职业规划UI设计师应掌握的知识体系及职业规划UI设计师应掌握的知识体系UI设计师应掌握的
+				</span>
+			</a>	
+		</li> -->
+	</ul>
+</div>

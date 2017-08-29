@@ -1,0 +1,147 @@
+#head-search{
+    height:110px;
+    /*background: #CCCCCC;*/
+    width:100%;
+    border-bottom:1px solid RGB(192,187,187);
+}
+#head-article-user{
+    height:60px;
+    /*background: #CCCCCC;*/
+    width:100%;
+    border-bottom:1px solid RGB(234,235,234);
+}
+#search{
+	width:1000px;
+	margin:0 auto;
+	/*background-color: red;*/
+}
+#search-input{
+	position:absolute;
+	margin-left: 30px;
+	width:500px;
+	height:40px;
+	margin-top:35px;
+	margin-bottom: 35px;
+	font-size:16px;
+}
+#search-button{
+	width:100px;
+	height:41px;
+	position:absolute;
+	margin-left: 570px;
+	margin-top:35px;
+	margin-bottom: 35px;
+}
+#search-img{
+	width:100px;
+	height:41px;
+	margin-left: -8px;
+	margin-top: -2px;
+	background:rgb(134,134,134);
+}
+#search-img:hover{
+	background:rgb(0,161,133);
+}
+#article-user{
+	width:1000px;
+	margin:0 auto;
+}
+#article-user-ul{
+	padding:0;
+	font-size:17px;
+	color:rgb(168,171,166);
+}
+
+a{
+	color:rgb(168,171,166);
+}
+.article-user-li{
+	display: inline-block;
+	float:left;
+	padding:1em;
+	padding-left:1.3em;
+	list-style: none;
+	height:28px;
+	width:40px;
+}
+.article-user-li:hover,.main-order-li:hover{
+	background:rgb(234,234,234);
+}
+#main{
+	width:1000px;
+	margin:0 auto;
+	/*background-color: pink;*/
+	clear: both;
+}
+#main-order{
+	width:1000px;
+	margin:0 auto;
+	font-size:12px;
+	/*background-color: red;*/
+	height:55px;
+	/*border-bottom:1px dotted rgb(213,212,213);*/
+	left:0;
+}
+#main-order-ul{
+	padding:0;
+	color:rgb(168,171,166);
+	position:absolute;
+}
+.main-order-li{
+	margin-top: 12px;
+	float:left;
+	padding:1em;
+	height:6px;
+	line-height: 6px;
+}
+#left{
+	float:left;
+	left:0;
+	width:680px;
+	color:RGB(147,154,147);
+}
+#right{
+	width:290px;
+	margin-left: 30px;
+	float:left;
+}
+#more>a{
+	color:rgb(53,157,237);
+}
+.article-li{
+	border-top:1px dotted #ccc;
+	margin:0 0 130px 0;
+}
+.article{
+	padding:0.8em;
+	font-size:15px;
+	width:69px;
+	float:left;
+}
+.articleinfo{
+	width:585px;
+	float:right;
+}
+.articleinfo-head{
+	color:rgb(53,157,237);
+	line-height: 3.2em;
+	font-size:15px;
+}
+.articleinfo-content{
+	font-size:12px;
+}
+.articleinfo-foot{
+	line-height: 3.2em;
+	font-size:9px;
+}
+.articleinfo-foot>li:hover{
+	float:left;
+	font-size: 9px;
+	background-color: transparent;
+}
+.author{
+	color:rgb(53,157,237);
+}
+.left>ul>li{
+	margin: 20px 20px;
+}

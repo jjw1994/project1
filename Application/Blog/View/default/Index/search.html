@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <include file="./Application/Home/View/default/Public/head.html"/>
+    <meta name="author" content="Aidan Dai, webaidandai@gmail.com, www.aidandai.com"/>
+    <link rel="stylesheet" type="text/css" href="__COMMON__/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="__COMMON__/css/menu.css"/>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/page.css">
+    <link rel="stylesheet" type="text/css" href="__CSS__/index-search.css">
+    <link rel="stylesheet" type="text/css" href="__CSS__/lists-atricale.css">
+
+</head>
+<body>
+<include file="./Application/Home/View/default/Public/menu.html" />
+<div id="head-search">
+    <div id="search">
+        <div>
+            <input  id="search-input" type="text" placeholder="&nbsp;&nbsp;搜索内容">
+        </div>
+        <div>
+            <a href="__ROOT__/index.php/Blog/Index/search" target="_self">
+                <button type="button" id="search-button">
+                    <img id="search-img" src="__PUBLIC__/Blog/images/search_img.png">
+                </button>
+            </a>
+        </div>
+    </div>
+</div>
+<div id="head-article-user">
+    <div id="article-user">
+        <ul id="article-user-ul">
+            <a href="__ROOT__/index.php/Blog/Index/search/type/article" target="_self"><li class="article-user-li">文章</li></a>
+            <a href="__ROOT__/index.php/Blog/Index/search/type/user" target="_self"><li class="article-user-li">用户</li></a>
+        </ul>
+    </div>
+</div>
+<div id="main">
+<if condition="$lists.type eq art">
+    <div id="main-order">
+        <ul id="main-order-ul">
+            <li class="main-order-li"><a href="__ROOT__/index.php/Blog/Index/search/type/article/order/view" target="_self">热度排序</a></li>
+            <li class="main-order-li"><a href="__ROOT__/index.php/Blog/Index/search/type/article/order/time" target="_self">时间排序</a></li>
+        </ul>
+    </div>
+    <div id="left">
+        <include file="./Application/Home/View/default/User/user-articale.html" />
+    </div>
+<else />
+    <div id="user-left">
+        <ul>
+            <li>
+                <a href="__ROOT__/index.php?s=/Home/User/index/uid/29.html" target="_self">
+                    <!--<div class="user-img">-->
+                    <img src="__PUBLIC__/Blog/images/search-right.jpg" width="70px" height="70px">
+                    <!--</div>-->
+                    <div class="userinfo">
+                        <span class="user-name">大师兄李嘉图</span>
+                        <span class="user-sign">速度飞速度读书多年辅导书点击个电饭锅</span>
+                    </div>
+                    <div class="user-art-and-num">
+                        <span class="user-art">文章</span>
+                        <span class="user-art-num">100</span>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</if>
+    <div id="right">
+        <if condition="$lists.type neq art"><div id="empty"></div></if>
+            <div id="more">
+                <a href="__ROOT__/index.php/Blog/Index/index" target="_self">去更多世界看看?></a>
+            </div>
+            <div id="picture">
+                <img src="__PUBLIC__/Blog/images/search-right.jpg" width="270px" height="400px">
+            </div>
+    </div>
+    
+</div>
+<include file="./Application/Home/View/default/Public/page.html" />
+</body>
+</html>

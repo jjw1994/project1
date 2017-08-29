@@ -1,0 +1,25 @@
+<extend name="Base" />
+	<block name="main">
+		<switch name="judge">
+			<case value="0">
+				<!-- person-info -->
+				<include file="person-info" />
+				<!-- /person-info -->
+			</case>
+			<case value="1">
+				<!-- set-picture -->
+				<include file="set-picture" />
+				<!-- /set-picture -->
+			</case>
+			<case value="2">
+				<!-- mail-test -->
+				<include file="mail-test" />
+				<!-- /mail-test -->
+			</case>
+			<case value="3">
+				<!-- change-pwd -->
+				<include file="change-pwd" />
+				<!-- /change-pwd -->
+			</case>
+		</switch>
+	</block>

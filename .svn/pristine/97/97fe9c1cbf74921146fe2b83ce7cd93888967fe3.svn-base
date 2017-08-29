@@ -1,0 +1,21 @@
+<div id="not-find" style="width:1000px;height:auto;margin:0 auto;">
+	<img style="width:60%;height: auto;display:block;margin:12% auto;" src="__COMMON__/images/404.jpg" alt="404"/>
+</div>
+<script type="text/javascript" src="__COMMON__/static/layer-v2.0/layer/layer.js"></script>
+<script type="text/javascript">
+	window.onload = function(){
+
+		layer.confirm('3秒后自动跳转到首页！', {
+            btn: ['马上离开','3秒后离开'] //按钮
+        }, function(){
+            window.location.href = "__ROOT__/index.php?s=/Blog/Index/index.html";
+        }, function(){
+            
+        });
+
+		window.setTimeout(releave,3000);
+		function releave(){
+			window.location.href = "__ROOT__/index.php?s=/Blog/Index/index.html";
+		}	
+	}
+</script>

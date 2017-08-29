@@ -1,0 +1,406 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>LSGO-以大多数人的努力程度之低，根本轮不到拼天赋...</title>
+    <meta name="author" content="zp; Aidan Dai,webaidandai@gmail.com, www.aidandai.com"/>
+    <link rel="stylesheet" href="__MODULESTATIC__/jquery-fullPage/css/jquery.fullPage.css">
+    <link rel="stylesheet" href="__MODULESTATIC__/jquery-fullPage/css/focus.css">
+    <link rel="stylesheet" href="__CSS__/three.css">
+
+    <script src="__MODULESTATIC__/jquery-fullPage/js/jquery.min.js"></script>
+    <script src="__MODULESTATIC__/jquery-fullPage/js/jquery-ui.min.js "></script>
+    <script src="__MODULESTATIC__/jquery-fullPage/js/jquery.fullPage.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            if($.browser.msie && $.browser.version < 10){
+                $('body').addClass('ltie10');
+            }
+            $.fn.fullpage({
+                verticalCentered: false,
+                anchors: ['first', 'second','third','fourth'],
+                navigation: true,
+                navigationTooltips: ['first', 'second','third','fourth']
+            });
+        });
+    </script>
+    <script type="text/javascript" src="__JS__/three.js"></script>
+</head>
+<body>
+<div class="section section1">
+    <div class="bg">
+        <img src="__MODULESTATIC__/jquery-fullPage/images/first_1600_850.jpg" alt="">
+    </div>
+    <div class="bg11"></div>
+    <div class="bg12"></div>
+    <div class="first-title">互联网校内学习网站</div>
+</div>
+
+<div class="section section2">
+    <div class="bg">
+        <img src="__MODULESTATIC__/jquery-fullPage/images/second_1600_850.jpg" alt="">
+    </div>
+    <div class="bg21"></div>
+    <div class="bg22"></div>
+    <div class="second-title">我们的征途是星晨大海</div>
+    <ul class="lsgo-direction">
+        <li class="direction-first"></li>
+        <li class="direction-second"></li>
+        <li class="direction-third"></li>
+        <li class="direction-fourth"></li>
+        <li class="direction-fifth"></li>
+    </ul>
+</div>
+<div class="section sectrion3">
+    <div class="bg">
+        <img src="__MODULESTATIC__/jquery-fullPage/images/third_1600_850.jpg" alt="">
+    </div>
+    <div class="bg31"></div>
+    <div class="third-title">
+        <span class="third-title-left">他山之石</span>
+        <span  class="third-title-right">可以攻玉</span>
+    </div>
+    <div class="third-box">
+        <div class="three">
+            <div class="th-photo">
+                <div class="child">
+                    <div class="child_child"></div>
+                </div>
+            </div>
+            <div class="replace">
+                <div class="replace-top"></div>
+                <div class="replace-center">
+					<span class="th-username">
+						zp1996
+					</span>
+					<span class="th-hometown">
+						天津市
+					</span>
+                </div>
+                <div class="replace-bottom"></div>
+            </div>
+
+            <div class="th-photo">
+                <div class="child">
+                    <div class="child_child"></div>
+                </div>
+            </div>
+            <div class="replace">
+                <div class="replace-top"></div>
+                <div class="replace-center">
+					<span class="th-username">
+						zp1996
+					</span>
+					<span class="th-hometown">
+						天津市
+					</span>
+                </div>
+                <div class="replace-bottom"></div>
+            </div>
+
+            <div class="th-photo">
+                <div class="child">
+                    <div class="child_child"></div>
+                </div>
+            </div>
+            <div class="replace">
+                <div class="replace-top"></div>
+                <div class="replace-center">
+					<span class="th-username">
+						zp1996
+					</span>
+					<span class="th-hometown">
+						天津市
+					</span>
+                </div>
+                <div class="replace-bottom"></div>
+            </div>
+
+            <div class="th-photo">
+                <div class="child">
+                    <div class="child_child"></div>
+                </div>
+            </div>
+            <div class="replace">
+                <div class="replace-top"></div>
+                <div class="replace-center">
+					<span class="th-username">
+						zp1996
+					</span>
+					<span class="th-hometown">
+						天津市
+					</span>
+                </div>
+                <div class="replace-bottom"></div>
+            </div>
+
+            <div class="th-photo">
+                <div class="child">
+                    <div class="child_child"></div>
+                </div>
+            </div>
+            <div class="replace">
+                <div class="replace-top"></div>
+                <div class="replace-center">
+					<span class="th-username">
+						zp1996
+					</span>
+					<span class="th-hometown">
+						天津市
+					</span>
+                </div>
+                <div class="replace-bottom"></div>
+            </div>
+
+            <div class="th-photo">
+                <div class="child">
+                    <div class="child_child"></div>
+                </div>
+            </div>
+            <div class="replace">
+                <div class="replace-top"></div>
+                <div class="replace-center">
+					<span class="th-username">
+						zp1996
+					</span>
+					<span class="th-hometown">
+						天津市
+					</span>
+                </div>
+                <div class="replace-bottom"></div>
+            </div>
+
+            <div class="th-photo">
+                <div class="child">
+                    <div class="child_child"></div>
+                </div>
+            </div>
+            <div class="replace">
+                <div class="replace-top"></div>
+                <div class="replace-center">
+					<span class="th-username">
+						zp1996
+					</span>
+					<span class="th-hometown">
+						天津市
+					</span>
+                </div>
+                <div class="replace-bottom"></div>
+            </div>
+
+            <div class="th-photo">
+                <div class="child">
+                    <div class="child_child"></div>
+                </div>
+            </div>
+            <div class="replace">
+                <div class="replace-top"></div>
+                <div class="replace-center">
+					<span class="th-username">
+						zp1996
+					</span>
+					<span class="th-hometown">
+						天津市
+					</span>
+                </div>
+                <div class="replace-bottom"></div>
+            </div>
+
+            <div class="th-photo">
+                <div class="child">
+                    <div class="child_child"></div>
+                </div>
+            </div>
+            <div class="replace">
+                <div class="replace-top"></div>
+                <div class="replace-center">
+					<span class="th-username">
+						zp1996
+					</span>
+					<span class="th-hometown">
+						天津市
+					</span>
+                </div>
+                <div class="replace-bottom"></div>
+            </div>
+
+            <div class="th-photo">
+                <div class="child">
+                    <div class="child_child"></div>
+                </div>
+            </div>
+            <div class="replace">
+                <div class="replace-top"></div>
+                <div class="replace-center">
+					<span class="th-username">
+						zp1996
+					</span>
+					<span class="th-hometown">
+						天津市
+					</span>
+                </div>
+                <div class="replace-bottom"></div>
+            </div>
+
+            <div class="th-photo">
+                <div class="child">
+                    <div class="child_child"></div>
+                </div>
+            </div>
+            <div class="replace">
+                <div class="replace-top"></div>
+                <div class="replace-center">
+					<span class="th-username">
+						zp1996
+					</span>
+					<span class="th-hometown">
+						天津市
+					</span>
+                </div>
+                <div class="replace-bottom"></div>
+            </div>
+
+            <div class="th-photo">
+                <div class="child">
+                    <div class="child_child"></div>
+                </div>
+            </div>
+            <div class="replace">
+                <div class="replace-top"></div>
+                <div class="replace-center">
+					<span class="th-username">
+						zp1996
+					</span>
+					<span class="th-hometown">
+						天津市
+					</span>
+                </div>
+                <div class="replace-bottom"></div>
+            </div>
+
+            <div class="th-photo">
+                <div class="child">
+                    <div class="child_child"></div>
+                </div>
+            </div>
+            <div class="replace">
+                <div class="replace-top"></div>
+                <div class="replace-center">
+					<span class="th-username">
+						zp1996
+					</span>
+					<span class="th-hometown">
+						天津市
+					</span>
+                </div>
+                <div class="replace-bottom"></div>
+            </div>
+
+            <div class="th-photo">
+                <div class="child">
+                    <div class="child_child"></div>
+                </div>
+            </div>
+            <div class="replace">
+                <div class="replace-top"></div>
+                <div class="replace-center">
+					<span class="th-username">
+						zp1996
+					</span>
+					<span class="th-hometown">
+						天津市
+					</span>
+                </div>
+                <div class="replace-bottom"></div>
+            </div>
+
+            <div class="th-photo">
+                <div class="child">
+                    <div class="child_child"></div>
+                </div>
+            </div>
+            <div class="replace">
+                <div class="replace-top"></div>
+                <div class="replace-center">
+					<span class="th-username">
+						zp1996
+					</span>
+					<span class="th-hometown">
+						天津市
+					</span>
+                </div>
+                <div class="replace-bottom"></div>
+            </div>
+
+            <div class="th-photo">
+                <div class="child">
+                    <div class="child_child"></div>
+                </div>
+            </div>
+            <div class="replace">
+                <div class="replace-top"></div>
+                <div class="replace-center">
+					<span class="th-username">
+						zp1996
+					</span>
+					<span class="th-hometown">
+						天津市
+					</span>
+                </div>
+                <div class="replace-bottom"></div>
+            </div>
+
+            <div class="th-photo">
+                <div class="child">
+                    <div class="child_child"></div>
+                </div>
+            </div>
+            <div class="replace">
+                <div class="replace-top"></div>
+                <div class="replace-center">
+					<span class="th-username">
+						zp1996
+					</span>
+					<span class="th-hometown">
+						天津市
+					</span>
+                </div>
+                <div class="replace-bottom"></div>
+            </div>
+
+            <div class="th-photo">
+                <div class="child">
+                    <div class="child_child"></div>
+                </div>
+            </div>
+            <div class="replace">
+                <div class="replace-top"></div>
+                <div class="replace-center">
+					<span class="th-username">
+						zp1996
+					</span>
+					<span class="th-hometown">
+						天津市
+					</span>
+                </div>
+                <div class="replace-bottom"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section sectrion4">
+    <div class="bg">
+        <img src="__MODULESTATIC__/jquery-fullPage/images/fourth_1600_850.jpg" alt="">
+    </div>
+    <div class="bg41"></div>
+    <div class="bg42"></div>
+    <div class="bg43">
+        <div class="bg44"></div>
+    </div>
+    <div class="forth-title">
+        <a href="__ROOT__/index.php?s=/Blog/Index/index.html">扫一扫！加入我们</a>
+    </div>
+</div>
+</body>
+</html>

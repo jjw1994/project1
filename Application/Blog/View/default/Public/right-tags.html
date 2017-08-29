@@ -1,0 +1,7 @@
+<div class="right-tags">
+	<for start="1" end="$len">
+		<a href="{:U("Article/lists",array("tag"=>$i))}" class="unique" <if condition="$i eq $tag">id="active"</if> target="_self">
+			{$tags[$i]}
+		</a>
+	</for>
+</div>

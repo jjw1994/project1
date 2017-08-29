@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <include file="Public/head"/>
+
+    <!--private head-->
+    <title>LSGO-以大多数人的努力程度之低，根本轮不到拼天赋...</title>
+    <meta name="description" content="lsgogroup"/>
+    <meta name="keywords" content="lsgogroup"/>
+    <meta name="author" content="Aidan Dai, webaidandai@gmail.com, www.aidandai.com"/>
+    <link rel="stylesheet" type="text/css" href="__COMMON__/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/perletter.css"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/resletter.css"/>
+
+    <link rel="stylesheet" type="text/css" href="__COMMON__/css/public.css">
+    <link rel="stylesheet" type="text/css" href="__COMMON__/css/blog-bar.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+    <!--/private head-->
+</head>
+<body>
+	<div class="main">
+		<div class="content">
+			<!-- 放头部两层头文件 -->
+			<include file="Public/head_nav"/>
+			<include file="Public/secbar"/>
+            <!-- 头部文件结束 -->
+            <div class="personal">
+                <!-- 主体头部 -->
+                <div class="return"><a href="##" class="back"><<返回</a></div>
+                <div class="touser">发私信给&nbsp<span class="subuser">曾轶可</span></div>
+                <!-- 文本域 -->
+                <div class="textarea">
+                    <form>
+                        <textarea type="text" id="textarea"></textarea>
+                        <input type="submit" value="发送" id="subtext"/>
+                    </form>
+                </div>
+                <!-- 分割线 -->
+                <div class="cut-off-rule"></div>
+                <!-- 评论互动区 -->
+                <div class="hisletter">
+                    <div class="letblock">
+                        <div class="left">
+                            <img src="__ROOT__/Uploads/Picture/headimg/default/default1.jpg" alt="用户头像" title="用户头像" class="headimg" >
+                        </div>
+                        <div class="right">
+                            <div class="username">曾轶可&nbsp:&nbsp</div>
+                            <div class="detail">
+                                你好，你的第一篇文章原作者是我，你涉嫌抄袭了吧？
+                            </div>
+                            <div class="data">
+                                <h6>9月6号&nbsp&nbsp14:28</h6>
+                            </div>
+                            <div class="dialogue">
+                                <h6><a href="">举报</a>&nbsp|&nbsp<a href="">回复</a>&nbsp|&nbsp<a href="">删除</a></h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="letblock">
+                        <div class="left">
+                            <img src="__ROOT__/Uploads/Picture/headimg/default/default1.jpg" alt="用户头像" title="用户头像" class="headimg" >
+                        </div>
+                        <div class="right">
+                            <div class="username">李嘉图&nbsp:&nbsp</div>
+                            <div class="detail">
+                                逗不逗？誰抄你的了？
+                            </div>
+                            <div class="data">
+                                <h6>9月6号&nbsp&nbsp14:28</h6>
+                            </div>
+                            <div class="dialogue">
+                                <h6><a href="">删除</a></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <include file="Public/footer"/>
+    </div>
+</body>
+</html>

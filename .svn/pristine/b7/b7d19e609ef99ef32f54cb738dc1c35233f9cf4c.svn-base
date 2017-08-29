@@ -1,0 +1,83 @@
+body{
+    background-color: #2C2827;
+}
+#mdeditor-top{
+    height: 130px;
+    width: 100%;
+}
+#mdeditor-header{
+    height: 42px;
+    width: 100%;
+    color: #fff;
+    font-size: 1.6rem;
+}
+.description{
+    float: left;
+    height: 42px;
+    width: 30%;
+}
+.description>input{
+    height: 24px;
+    margin: 8px 0;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding-left: 20px;
+}
+.tag{
+    float: left;
+    height: 42px;
+    width: 70%;
+}
+#mdeditor-title{
+    height: 88px;
+    width: 100%;
+    display: inline-block;
+}
+#mdeditor-title input{
+    display: inline-block;
+    width: 70%;
+    height: 100%;
+    float: left;
+    font-size: 2.4rem;
+    padding: 0 0 0 20px;
+}
+.btns{
+    display: inline-block;
+    width: 30%;
+    height: 100%;
+    padding-left: 2%;
+    float: right;
+}
+.btns button{
+    width: 120px;
+    height: 42px;
+    border-radius: 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 23px 20px;
+}
+.tag{
+    color: #fff;
+    font-size: 14px;
+    padding-right: 20px;
+}
+.item-label{
+    float: right;
+    display: block;
+    height: 42px;
+    line-height: 42px;
+}
+.controls{
+    float: right;
+    height: 42px;
+    line-height: 42px;
+}
+
+.checkbox{
+    display:inline-block;
+    margin: 0 10px;
+}
+.tag-item{
+    margin-right: 5px;
+}

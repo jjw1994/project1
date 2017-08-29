@@ -1,0 +1,127 @@
+.three-title{
+	font-size: 40px;
+	color: #fff;
+	font-family: "方正";
+	font-weight: lighter;
+	position: absolute;
+	left: 37.5%;
+	top: 37%;
+}
+.th-photo,.child,.child_child{
+	width: 80px;
+	height: 120px;
+	overflow: hidden;
+}
+.three{
+	position: relative;
+	left: 0;
+	bottom: 0;
+}
+.th-photo{
+	z-index: 10;
+	position: absolute;
+	-webkit-transform: rotate(120deg);
+	-o-transform: rotate(120deg);
+	-moz-transform: rotate(120deg);
+	-ms-transform: rotate(120deg);
+	transform: rotate(120deg);
+	visibility: hidden;
+}
+.th-photo:hover{
+	animation: run  ease-in-out 1s 2;
+		-moz-animation: run  ease-in-out 1s 2;	
+	-webkit-animation: run  ease-in-out 1s 2;	
+	-ms-animation: run  ease-in-out 1s 2;	
+		-o-animation: run  ease-in-out 1s 2;
+}
+.child{
+	z-index: 5;
+	-webkit-transform: rotate(-60deg);
+	-o-transform: rotate(-60deg);
+	-moz-transform: rotate(-60deg);
+	-ms-transform: rotate(-60deg);
+	transform: rotate(-60deg);
+	visibility: hidden;
+}
+.child_child{
+	background: red;
+	background: url(../images/userHead.jpg) center;
+	background-size: 118%;
+	-webkit-transform: rotate(-60deg);
+	-o-transform: rotate(-60deg);
+	-moz-transform: rotate(-60deg);
+	-ms-transform: rotate(-60deg);
+	transform: rotate(-60deg);
+	visibility: visible;
+}
+@-webkit-keyframes run{
+	0%{	
+		-webkit-transform: rotate(120deg);
+		-webkit-transform: rotateX(2deg) rotateY(0);
+	}
+	100% {
+		transform:rotateX(2deg) rotateY(360deg);	
+		}
+}
+.replace{
+	color: #fff;
+	position: absolute;
+	/*top: 17px;*/
+	z-index: 10000;
+	display: none;
+	width: 80px;
+	height: 100px;
+}
+.back{
+	color: #fff;
+	width: 80px;
+	height: 100px;
+	position: absolute;
+	left: 10px;
+	top: 17px;
+	z-index: 10000;
+	animation: run  ease-in-out 1s 2;
+		-moz-animation: run  ease-in-out 1s 2;	
+	-webkit-animation: run  ease-in-out 1s 2;	
+	-ms-animation: run  ease-in-out 1s 2;	
+		-o-animation: run  ease-in-out 1s 2;	
+}
+.replace-top{
+	width: 0;
+	height: 0;
+	border-bottom: 24px solid #37424c;
+	border-left: 40px solid transparent;
+	border-right: 40px solid transparent;
+}
+.replace-center{
+	background: #37424c;
+	width: 80px; 
+	height: 48px;
+	background: #37424c;
+	text-align: center;
+}
+.replace-bottom{
+	width: 0;
+	height: 0;
+	border-top: 24px solid #37424c;
+	border-left: 40px solid transparent;
+	border-right: 40px solid transparent;
+}
+.shade{
+	width: 114px;
+	height: 114px;
+	background: rgba(0,0,0,0.4);
+	z-index: 1000;
+	position: absolute;
+}
+.hide{
+	display: none;
+}
+.show{
+	display: block;
+}
+.th-username,.th-hometown{
+	/*color: #fff;*/
+	font-weight: 500;
+	font-size: 18px;
+}

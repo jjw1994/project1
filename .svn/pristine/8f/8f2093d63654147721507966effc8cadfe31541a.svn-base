@@ -1,0 +1,18 @@
+<extend name="user-base" />
+<block name="main">
+	<!-- user-information -->
+	<include file="user-info" />
+	<!-- /user-information -->
+	<!-- hot-articale -->
+	<include file="hot-articale" />
+	<!-- /hot-articale -->
+	<!-- user-articale -->
+	<include file="user-articale" />
+	<!-- /user-articale -->
+	<!-- user-collect -->
+	<!-- <include file="user-collect" /> -->
+	<!-- /user-collect -->
+	<!-- user-trends -->
+	<!-- <include file="user-trends" /> -->
+	<!-- /user-trends -->
+</block>

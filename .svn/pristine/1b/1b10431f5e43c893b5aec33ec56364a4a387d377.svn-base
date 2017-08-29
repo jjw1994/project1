@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <include file="./Application/Home/View/default/Public/head.html"/>
+
+    <!--private head-->
+    <meta name="author" content="Aidan Dai, webaidandai@gmail.com, www.aidandai.com"/>
+    <link rel="stylesheet" type="text/css" href="__COMMON__/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="__COMMON__/css/menu.css"/>
+    <link rel="stylesheet" type="text/css" href="__COMMON__/css/blog-nav.css"/>
+    <link rel="stylesheet" type="text/css" href="__COMMON__/css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="__COMMON__/css/comment.css"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/article-index.css"/>
+    <link rel="stylesheet" href="__ROOT__/mdeditor/css/editormd.css" />
+    <!--/private head-->
+</head>
+<body>
+<include file="./Application/Home/View/default/Public/menu.html" />
+<include file="Public/article-blog-nav" />
+<div class="article-nav">
+    <volist name="article_nav" id="nav">
+        <notempty name="nav.url">
+            <a href="__ROOT__/index.php?s=/{$nav.url}.html" target="_self">{$nav.name}</a>
+            <span class="nav-parting-line"> \ </span>
+            <else />
+            <span class="nav-last">{$nav.name}</span>
+        </notempty>
+    </volist>
+</div>
+<div class="content">
+    <div id="article-box">
+        <if condition="$article.mdeditor eq 1">
+            <include file="Public/mdarticle" />
+            <else />
+            <include file="Public/article" />
+        </if>
+    </div>
+    <div id="article-list">
+        <div class="article-list">
+            <div class="article-user">
+                <a href="#">
+                    <img src="__ROOT__{$user['head']}" alt="user"/>
+                </a>
+                <span class="laster-article">最新文章</span>
+            </div>
+            <div class="article-list-box">
+                <volist name="list" id="list">
+                <a class="list-article-item" href="__ROOT__/index.php?s=/Blog/Article/index/id/{$list.id}.html" target="_self">
+                {$list.title}</a>
+                </volist>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="like-action-box">
+    <div class="like-action">赞</div>
+</div>
+<div class="other-action-box">
+    <div class="cllect-article">收藏</div>
+    <div class="share-article">分享</div>
+</div> -->
+
+<div class="blog-comment-box">
+    <include file="./Application/Home/View/default/Public/comment.html" />
+</div>
+<include file="./Application/Home/View/default/Public/footer.html" />
+<include file="./Application/Home/View/default/Public/var.html" />
+
+<!-- <script src="js/zepto.min.js"></script>
+<script>
+    var jQuery = Zepto;  // 为了避免修改flowChart.js和sequence-diagram.js的源码，所以使用Zepto.js时想支持flowChart/sequenceDiagram就得加上这一句
+</script> -->
+<script src="__ROOT__/mdeditor/write/js/jquery.min.js"></script>
+<script src="__ROOT__/mdeditor/lib/marked.min.js"></script>
+<script src="__ROOT__/mdeditor/lib/prettify.min.js"></script>
+
+<script src="__ROOT__/mdeditor/lib/raphael.min.js"></script>
+<script src="__ROOT__/mdeditor/lib/underscore.min.js"></script>
+<script src="__ROOT__/mdeditor/lib/sequence-diagram.min.js"></script>
+<script src="__ROOT__/mdeditor/lib/flowchart.min.js"></script>
+<script src="__ROOT__/mdeditor/lib/jquery.flowchart.min.js"></script>
+
+<script src="__ROOT__/mdeditor/editormd.js"></script>
+<script type="text/javascript">
+    $(function() {
+        editormd.markdownToHTML("test-editormd-view", {
+            htmlDecode      : "style,script,iframe",  // you can filter tags decode
+            emoji           : true,
+            taskList        : true,
+            tex             : true,  // 默认不解析
+            flowChart       : true,  // 默认不解析
+            sequenceDiagram : true,  // 默认不解析
+        });
+    });
+</script>
+    <div>{$islogin}</div>
+<div class="hidden-data">
+    <input type="hidden" name="login" value="{$islogin}">
+    <input type="hidden" name="article_id" value="{$id}">
+    <input type="hidden" name="article_user_id" value="{$article_user_id}">
+</div>
+<script type="text/javascript" src="__COMMON__/static/layer-v2.0/layer/layer.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $.each($('.view-comment-item'),function(index,comment){
+            var id = $(comment).attr('id');
+            editormd.markdownToHTML(id, {
+                htmlDecode      : "style,script,iframe",  // you can filter tags decode
+                emoji           : true,
+                taskList        : true,
+                tex             : true,  // 默认不解析
+                flowChart       : true,  // 默认不解析
+                sequenceDiagram : true,  // 默认不解析
+            });
+        });
+        function getCookie(c_name) {
+            if (document.cookie.length > 0) {
+                var c_start = document.cookie.indexOf(c_name + "=");
+                if (c_start != -1) {
+                    c_start = c_start + c_name.length + 1;
+                    var c_end = document.cookie.indexOf(";",c_start);
+                    if (c_end == -1){
+                        c_end = document.cookie.length;
+                    }
+                    return unescape(document.cookie.substring(c_start,c_end));
+                }
+            }
+            return null;
+        }
+        var user_id = getCookie('userid') ? getCookie('userid') : $("input[name=login]").val();
+
+        $("input[type=text]").focus(function(){
+            checkLogin(user_id);
+        });
+        $('#comment-submit').one('click',function(){
+            var date = new Date();
+            var post = {
+                relative_content: $("input[name=article_id]").val(),
+                relative_name: 'id',
+                user_id: user_id,
+                is_read: 0,
+                create_time: date.getTime(),
+                status: 1,
+                comment: testEditor.getValue(),
+                replayed_user_id: $("input[name=article_user_id]").val(),
+            };
+            var check = checkLogin(user_id);
+            if(check){
+                handleComment(post);
+            }
+        });
+
+        $('.replay-submit').one('click',function(){
+            var date = new Date();
+            var post = {
+                relative_content: $("input[name=article_id]").val(),
+                relative_name: 'id',
+                user_id: user_id,
+                pid: $(this).parents(".view-comment").find("input[name=comment-id]").val(),
+                is_read: 0,
+                create_time: date.getTime(),
+                status: 1,
+                replay_comment: $(this).siblings('input[name=replay-comment]').val(),
+                replayed_user_id: $(this).siblings('input[name=replayed-user-id]').val(),
+            };
+            console.log(post);
+            var check = checkLogin(user_id);
+            if(check){
+                handleComment(post);
+            }
+        });
+
+        /**
+         * check user by cookie and session(ajax)
+         * @param null
+         */
+        function checkLogin(cookie){
+            if(!(cookie || $("input[name=login]"))){
+                //询问框
+                layer.confirm('请登录后在评论，现在去登录？', {
+                    btn: ['马上登录','残忍拒绝'] //按钮
+                }, function(){
+                    window.location.href = "__ROOT__/index.php?s=/Home/User/login.html";
+                }, function(){
+                    layer.msg("只有登录后才能评论呦！");
+                });
+                return false;
+            }else{
+                return true;
+            }
+        }
+        /**
+         * handel comment of ajax post
+         * @param post
+         */
+        function handleComment(post){
+
+            if('comment' in post){
+                if(post.comment){
+                    ajaxComment(post);
+                }else{
+                    layer.msg("评论内容不能为空");
+                }
+            }else{
+                if(post.replay_comment){
+                    ajaxComment(post);
+                }else{
+                    layer.msg("回复内容不能为空");
+                }
+            }
+        }
+
+        /**
+         * ajax post comment
+         * @param post
+         */
+        function ajaxComment(post){
+            $.post(
+                    "__ROOT__/index.php?s=/Home/User/comment.html",
+                    post,
+                    function(data){
+                        if(data.status){
+                            layer.msg(data.msg);
+                            window.location.reload();
+                        }else{
+                            layer.msg(data.msg);
+                        }
+                    }
+            );
+        }
+
+    });
+</script>
+</body>
+</html>

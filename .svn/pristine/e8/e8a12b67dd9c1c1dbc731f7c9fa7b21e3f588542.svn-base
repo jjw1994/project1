@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ch-cmn-hans">
+<head>
+    <include file="./Application/Home/View/default/Public/head.html"/>
+    <meta name="author" content="Aidan Dai, webaidandai@gmail.com, www.aidandai.com"/>
+    <link rel="stylesheet" type="text/css" href="__COMMON__/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="__COMMON__/css/menu.css"/>
+    <link rel="stylesheet" type="text/css" href="__COMMON__/css/public.css">
+
+    <!--private-->
+    <link rel="stylesheet" type="text/css" href="__CSS__/search.css">
+    <link rel="stylesheet" type="text/css" href="__CSS__/lists-atricale.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/page.css">
+    <!--/private-->
+</head>
+<body>
+<include file="./Application/Home/View/default/Public/menu.html" />
+
+<!--search-->
+<div id="blog-search">
+    <div class="search-from">
+        <input type="text" value="{$keyword}" name="keyword" id="search-keyword">
+        <input type="button" value="搜 索" id="search-button">
+    </div>
+    <hr class="search-cut-line"/>
+    <div class="search-type">
+        <a class="search-article search-type-active" href="__ROOT__/index.php/Blog/Search/index/type/article/keyword/{$keyword}" target="_self">文 章</a>
+        <a class="search-user" href="__ROOT__/index.php/Blog/Search/index/type/user/keyword/{$keyword}"  target="_self">用 户</a>
+    </div>
+    <hr class="serach-bottom-line"/>
+</div>
+<!--/search-->
+
+<!--search-result-->
+<section id="search-result">
+    <div class="main">
+        <div class="search-order">
+            <a class="order-time order-active" href="__ROOT__/index.php/Blog/Search/index/type/{$type}/order/time/keyword/{$keyword}"  target="_self">时间排序</a>
+            <a class="order-view" href="__ROOT__/index.php/Blog/Search/index/type/{$type}/order/view/keyword/{$keyword}"  target="_self">热度排序</a>
+        </div>
+        <div class="search-content">
+            <if condition="$get[t] eq a">
+                <include file="./Application/Home/View/default/User/user-articale.html" />
+                <else />
+                <include file="./Application/Home/View/default/Public/user-list.html" />
+            </if>
+        </div>
+    </div>
+    <div class="side">
+        <div>热门搜索</div>
+        <a href="__ROOT__/index.php?s=/Blog/Search/index/keyword/css" target="_self">css</a>
+        <a href="__ROOT__/index.php?s=/Blog/Search/index/keyword/html" target="_self">html</a>
+        <a href="__ROOT__/index.php?s=/Blog/Search/index/keyword/javascript" target="_self">javascript</a>
+        <a href="__ROOT__/index.php?s=/Blog/Search/index/keyword/php" target="_self">php</a>
+        <a href="__ROOT__/index.php?s=/Blog/Search/index/keyword/mysql" target="_self">mysql</a>
+        <a href="__ROOT__/index.php?s=/Blog/Search/index/keyword/apache" target="_self">apache</a>
+        <a href="__ROOT__/index.php?s=/Blog/Search/index/keyword/linux" target="_self">linux</a>
+        <a href="__ROOT__/index.php?s=/Blog/Search/index/keyword/thinkphp" target="_self">thinkphp</a>
+        <a href="__ROOT__/index.php?s=/Blog/Search/index/keyword/onethink" target="_self">onethink</a>
+        <a href="__ROOT__/index.php?s=/Blog/Search/index/keyword/C#" target="_self">C#</a>
+        <a href="__ROOT__/index.php?s=/Blog/Search/index/keyword/C++" target="_self">C++</a>
+        <a href="__ROOT__/index.php?s=/Blog/Search/index/keyword/C" target="_self">C</a>
+    </div>
+</section>
+<!--/search-result-->
+<include file="./Application/Home/View/default/Public/page.html" />
+<include file="./Application/Home/View/default/Public/footer.html" />
+<include file="./Application/Home/View/default/Public/var.html" />
+<script type="text/javascript">
+    $(function(){
+        $("#search-button").click(function(){
+            var url = window.location.href;
+            url = url.substring(0, url.indexOf("keyword") + 8);
+            window.location.href = url + $("#search-keyword").val();
+        });
+        $("body").keydown(function() {
+            if (event.keyCode == "13") {
+                $("#search-button").click();
+            }
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<div class="right-tags">
+	<volist name="tags" id="vo">
+			<a href="{:U("Article/lists",array("tag"=>$vo["id"]))}" class="unique" <if condition="$vo.id eq $tag">id="active"</if> target="_self">
+				{$vo.tag_name}
+			</a>
+		</if>
+	</volist>
+</div>

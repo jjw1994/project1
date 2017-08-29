@@ -1,0 +1,30 @@
+<div class="user-user-info">
+	<span class="user-img">
+		<img src="__ROOT__{$info.head_picture_id}">
+	</span>
+	<span class="user-name">{$info.username}</span>
+	<i class="address-icon"></i>
+	<span class="address">中国-天津</span>
+	<span class="user-sign">
+		我们的征途是星辰大海
+	</span>
+	<div class="school">
+		<i class="user-school-icon"></i>
+		<span class="user-school">华北电力大学保定数理系</span>
+	</div>
+<!-- 	<div class="gain">
+		获得:
+		<i class="praise-icon"></i>
+		<span class="praise">1111150&nbsp;赞同</span>
+		<i class="collect-icon"></i>
+		<span class="collect">150&nbsp;收藏</span>
+	</div>
+	<a class="private-letter">
+		<i class="letter"></i>
+	</a> -->
+	<a class="link-to" href="">
+		<i class="turn-to"></i>
+		返回我的主页
+	</a>
+	<!-- <include file="user-nav" /> -->
+</div>

@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>LSGO - let us go!</title>
+    <meta name="description" content="lsgogroup团队技术网站"/>
+    <meta name="keywords" content="lsgo,lsgogroup,lsgogroup团队技术网站"/>
+    <meta name="author" content="zp; Aidan Dai,webaidandai@gmail.com, www.aidandai.com"/>
+    <link rel="stylesheet" href="__MODULESTATIC__/jquery-fullPage/css/jquery.fullPage.css">
+    <link rel="stylesheet" href="__MODULESTATIC__/jquery-fullPage/css/focus.css">
+    <link rel="stylesheet" href="__CSS__/three.css">
+    <link type="image/x-icon" href="__ROOT__/Public/favicon.ico" rel="shortcut icon"/>
+    <script src="__MODULESTATIC__/jquery-fullPage/js/jquery.min.js"></script>
+    <script src="__MODULESTATIC__/jquery-fullPage/js/jquery-ui.min.js "></script>
+    <script src="__MODULESTATIC__/jquery-fullPage/js/jquery.fullPage.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            if($.browser.msie && $.browser.version < 10){
+                $('body').addClass('ltie10');
+            }
+            $.fn.fullpage({
+                verticalCentered: false,
+                anchors: ['first', 'second','third','fourth','fifth','sixth'],
+                navigation: true,
+                navigationTooltips: ['first', 'second','third','fourth','fifth','sixth']
+            });
+        });
+    </script>
+    <script type="text/javascript" src="__JS__/three.js"></script>
+</head>
+<body>
+<div class="section section1">
+    <div class="bg">
+        <img src="__MODULESTATIC__/jquery-fullPage/images/first_1600_850.jpg" alt="">
+    </div>
+    <div class="bg11"></div>
+    <div class="bg12"></div>
+    <div class="first-title">互联网在线学习平台</div>
+</div>
+<div class="section">
+    <div class="bg" id="zidonghua">
+        <div class="zdh-info">
+            <img src="__MODULESTATIC__/jquery-fullPage/images/zidonghualogo.png" alt="自动化logo" class="zdh-logo">
+            <div class="zdh-title">模式识别 智能感知</div>
+        </div>
+    </div>
+</div>
+<div class="section">
+    <div class="bg">
+        <div class="ele-info">
+            <img src="__MODULESTATIC__/jquery-fullPage/images/dianlilogo.png" alt="电力logo" class="ele-power">
+            <div class="ele-power-title">电力图像处理与分析</div>
+        </div>
+    </div>
+</div>
+<div class="section section2">
+    <div class="bg">
+        <img src="__MODULESTATIC__/jquery-fullPage/images/second_1600_850.jpg" alt="">
+    </div>
+    <div class="bg21"></div>
+    <div class="bg22"></div>
+    <div class="second-title">我们的征途是星辰大海</div>
+    <ul class="lsgo-direction">
+        <li class="direction-first"></li>
+        <li class="direction-second"></li>
+        <li class="direction-third"></li>
+        <li class="direction-fourth"></li>
+        <li class="direction-fifth"></li>
+    </ul>
+</div>
+<div class="section sectrion3">
+    <div class="bg">
+        <img src="__MODULESTATIC__/jquery-fullPage/images/third_1600_850.jpg" alt="">
+    </div>
+    <div class="bg31"></div>
+    <div class="third-title">
+        <span class="third-title-left">Every day on</span>
+        <span  class="third-title-right">a higher level</span>
+    </div>
+    <div class="third-box">
+        <div class="three">
+            <volist name="data" id="vo">
+                <div class="th-photo">
+                    <div class="child">
+                        <div class="child_child">
+                            <img src="__ROOT__{$vo.path}" style="width: 90px;height: 120px;">
+                        </div>
+                    </div>
+                </div>
+                <div class="replace">
+                    <div class="replace-top"></div>
+                    <div class="replace-center">
+    					<span class="th-username">
+    					    {$vo.username}
+                        </span>
+                    </div>
+                    <div class="replace-bottom"></div>
+                </div>
+            </volist>
+        </div>
+    </div>
+</div>
+<div class="section sectrion4">
+    <div class="bg">
+        <img src="__MODULESTATIC__/jquery-fullPage/images/fourth_1600_850.jpg" alt="">
+    </div>
+    <div class="bg41"></div>
+    <div class="bg42"></div>
+    <div class="bg43">
+        <div class="bg44"></div>
+    </div>
+    <div class="forth-title">
+        <a href="__ROOT__/index.php?s=/Blog/Index/index.html">let us go</a>
+    </div>
+</div>
+</body>
+</html>

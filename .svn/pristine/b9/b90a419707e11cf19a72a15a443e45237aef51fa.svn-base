@@ -1,0 +1,126 @@
+<div class="setting-wrap">
+	<form action="__CONTROLLER__/setprofile" method="post">
+		<div class="info-line">
+			<label class="lable-name" >昵称</label>
+			<div class="info-text">
+				<input type="text" class="info-input" name='nickname'>
+			</div>
+		</div>
+		<div class="info-line">
+			<label class="lable-name" >个人介绍</label>
+			<div class="info-text">
+				<input type="text" class="info-input" name='introduce'>
+			</div>
+		</div>
+		
+		<!--  
+		<div class="form-item">
+                <label class="item-label">商家所在省自治区(* 必填)</label>
+                <div class="controls">
+                    <select required name="province" id="province">
+                        <option value="">请选择省</option> 
+                        <volist name="province" id="data">  
+                            <option value="{$data.id}">{$data.name}</option>
+                        </volist>    
+                    </select>
+                    <p class="sure"></p>
+                </div>
+            </div>
+		<div class="form-item" id="city-area">
+                //<label class="item-label">商家所在市区(* 必填)</label>
+                <div class="controls">
+                    <select required name="city" id="city">
+                        <option value="">请选择城市区</option>
+                    </select>
+                    <p class="sure"></p>
+                </div>
+            </div>
+            <div class="form-item" id="town-area">
+                //<label class="item-label">商家所在区县</label>
+                <div class="controls">
+                    <select name="town" id="town">  
+                        <option value="0">请选择区县</option>
+                    </select>
+                </div>
+            </div>
+            -->
+		
+		<div class="info-line">
+			<label class="lable-name">城市</label>
+			<div class="info-text">
+				<select class="info-province"  id="province">
+					<option value>选择省份</option>
+					<volist name="province" id="data">  
+                         <option value="{$data.id}">{$data.name}</option>
+                    </volist>   
+				</select>
+				<select class="info-city"  id="city">
+					<option value>选择城市</option>
+				</select>
+				<select class="info-area" name="town" id="town">
+					<option value>选择区县</option>
+				</select>
+			</div>
+		</div>
+		<div class="info-line">
+			<label class="lable-name">性别</label>
+			<div class="info-text">
+				<div class="sex-select">
+					
+  						<input type="radio" name="sex" value="0" 
+  						class="info-sex"/>保密
+  						<input type="radio" name="sex" value="1" 
+  						class="info-sex"/>男
+  						<input type="radio" name="sex" value="2" 
+  						class="info-sex"/>女
+					
+				</div>
+			</div>
+		</div>
+		<div class="info-line">
+			<label class="lable-name">个签</label>
+			<div class="info-text">
+				<textarea type="text" class="state-massage"></textarea>
+			</div>
+		</div>
+		<input type="submit" value="保存" class="sava-data"/>
+	</form>
+</div>
+<script type="text/javascript">
+        $("#province").change(
+        	function (){
+        		$.post(
+        			"__CONTROLLER__/address",
+        			{province:$(this).val()},
+        			function(data){
+        				var city=document.getElementById("city");
+        				city.innerHTML="";
+        				for(var i=0;i<data.length;i++){
+        					var html="<option value="+data[i].id+">"+data[i].name+"</option>";
+        					city.innerHTML+=html;
+        				}
+        			}
+        		)
+        	}		
+        )
+         $("#city").change(
+        	function (){
+        		$.post(
+        				"__CONTROLLER__/address",
+        			{city:$(this).val()},
+        			function(data){
+        				//alert('__CONTROLLER__/setprofile');
+        				console.log(data);
+        				var town=document.getElementById("town");
+        				town.innerHTML="";
+        				console.log(data);
+        				for(var i=0;i<data.length;i++){
+        					var html="<option value="+data[i].id+">"+data[i].name+"</option>";
+        					town.innerHTML+=html;
+        				}
+        			}
+        		)
+        	}		
+        )
+        
+    </script>

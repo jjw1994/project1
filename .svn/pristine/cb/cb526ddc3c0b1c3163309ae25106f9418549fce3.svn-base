@@ -1,0 +1,97 @@
+section{
+  width: 1000px;
+  margin: 20px auto;
+  position: relative;
+  height: auto;
+  min-height: 400px;
+}
+.atricle-list li {
+  width: 626px;
+  height: 95px;
+  margin: 18px;
+  display: block;
+  border-bottom: 1px solid #ddd;
+}
+.atricle-list li .particular-head {
+  font-size: 14px;
+  font-weight: 600;
+  color: #225599;
+}
+.atricle-list li .particular-head:hover {
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: underline;
+}
+.articale-info {
+  width: 100%;
+  position: relative;
+  font-size: 12px;
+  margin-top: 10px;
+}
+.tags {
+  margin-bottom: 10px;
+}
+.unique {
+  padding: 3px 5px;
+  height: 18px;
+  line-height: 18px;
+  background: #E4E3E8;
+  width: auto;
+  display: inline-block;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  margin-right: 10px;
+}
+.right-info {
+  position: absolute;
+  right: 10px;
+}
+.view{
+  color: rgb(51,102,153);
+}
+.number,.update-time{
+  color: #aaa;
+}
+.atricle-list li .particular-content {
+  font-size: 10px;
+  font-weight: 500;
+  color: #666666;
+  position: absolute;
+  top: 25px;
+  left: 65px;
+}
+.section-title {
+  display: block;
+  text-indent: 10px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #666666;
+  margin-top: 30px;
+}
+.read-number {
+  background: #7491a8;
+  color: #fff;
+  display: inline-block;
+  width: 40px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  position: absolute;
+  top: 25px;
+  left: 5px;
+}
+.right-tags {
+  width: 250px;
+  position: absolute;
+  right: 10px;
+  top: 0px;
+}
+.right-tags .unique{
+  margin-top: 10px;
+}
+#active{
+  background: #CAC2EC;
+}

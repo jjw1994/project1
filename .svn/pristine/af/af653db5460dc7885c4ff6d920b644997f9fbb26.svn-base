@@ -1,0 +1,126 @@
+<?php
+/**
+ *  +----------------------------------------------------------------------
+ *  | LSGOPHPFileInfo
+ *  +----------------------------------------------------------------------
+ *  | Copyright (c) LSGOGroup
+ *  +----------------------------------------------------------------------
+ *  | Author: AidanDai
+ *  +----------------------------------------------------------------------
+ *  | Date: 2015/9/12
+ *  +----------------------------------------------------------------------
+ *  | Time: 11:23
+ *  +----------------------------------------------------------------------
+ */
+
+namespace Blog\Controller;
+
+/**
+ * Class ArticleController
+ * article controller
+ * @package Blog\Controller
+ */
+class ArticleController extends BaseController {
+
+    /**
+     * LSGOPHPFunctionInfo
+     * function introduce:article home
+     * @param null
+     * @return null
+     * @author Aidan Dai
+     */
+    public function index(){
+
+        //main menu
+        $channel = new \Common\Model\ChannelModel();
+        $menu = $channel->getMenu("Blog");
+        $this->assign('menu', $menu);
+
+        $category = I('get.category');
+        //blog category
+        $cate= D("Category");
+        $blogNav = $cate->getCategory($category);
+        $this->assign('blogNav', $blogNav);
+
+        $document = D('Document');
+        //article content
+        $id = I("get.id");
+        $article = $document->content($id);
+        $this->assign('article',$article["info"]);
+        $this->assign('arr_tag_name',$article["tag"]);
+
+        //article nav
+        $article_nav = $document->articleNav($id);
+        $this->assign("article_nav",$article_nav);
+
+        //relative author
+        $relative = $document->relativeAuthor($article["info"]['uid']);
+        $this->assign('user',$relative["info"]);
+        $this->assign('list',$relative["list"]);
+
+        //comment
+        $comment = new \Common\Model\CommentModel();
+        $comment_data =  $comment->comment($id,"lsgoweb_document");
+        $this->assign('comment',$comment_data);
+
+        //view
+        $map["id"] = $id;
+        $data["view"] = $document->where($map)->getField("view") + 1;
+        $document->where($map)->save($data);
+
+        $this->assign('id',$id);
+        $issession = false;
+        if(session("username")){
+            $issession = true;
+        }
+        $this->assign('islogin',$issession);
+        $this->assign('article_user_id',$article["info"]['uid']);
+
+        $this->display('index');
+    }
+
+    /**
+     * LSGOPHPFunctionInfo
+     * function introduce:cllect article
+     * @param number $id
+     * @return boolean $bool
+     * @author Aidan Dai
+     */
+    public function cllectArticle($id){
+
+    }
+
+    /**
+     * LSGOPHPFunctionInfo
+     * function introduce:like article
+     * @param number $id
+     * @return boolean $bool
+     * @author Aidan Dai
+     */
+    public function likeArticle($id){
+
+    }
+    /**
+     * LSGOPHPFunctionInfo
+     * function introduce: articles list
+     * @param null
+     * @return null
+     * @author Aidan Dai
+     */
+    public function lists(){
+
+        //main menu
+        $channel = new \Common\Model\ChannelModel();
+        $menu = $channel->getMenu("Blog");
+        $this->assign('menu', $menu);
+
+        $category = I('get.category') ? I('get.category') : 2;
+        //blog category
+        $cate= D("Category");
+        $blogNav = $cate->getCategory($category);
+        $this->assign('blogNav', $blogNav);
+
+        $this->display('lists');
+    }
+
+}

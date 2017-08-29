@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <include file="./Application/Home/View/default/Public/head.html"/>
+
+    <!--private head-->
+    <meta name="author" content="Aidan Dai, webaidandai@gmail.com, www.aidandai.com"/>
+    <link rel="stylesheet" type="text/css" href="__COMMON__/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="__COMMON__/css/menu.css"/>
+    <link rel="stylesheet" type="text/css" href="__COMMON__/css/blog-nav.css"/>
+    <link rel="stylesheet" type="text/css" href="__COMMON__/css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/index-index.css"/>
+    <!--/private head-->
+</head>
+<body>
+    <include file="./Application/Home/View/default/Public/menu.html" />
+    <include file="Public/index-blog-nav" />
+
+    <!--banner-->
+    <div class="banner-bg">
+        <img src="__IMG__/banner_3000_600.jpg" alt="banner" />
+    </div>
+    <!--/banner-->
+
+    <!--blog main-->
+    <div class="blog-content">
+        <div class="blog-tag">
+            <ul class="tag-box">
+                <li class="tag-item" url="__ROOT__/index.php?s=/Blog/Article/lists/category/{$cate | default="2"}.html">
+                    <if condition="$catelogo">
+                        <img class="tag-active" src="__ROOT__{$catelogo['icon']}" alt="全部" title="全部"/>
+                        <else />
+                        <img class="tag-active" src="__ROOT__/Uploads/Picture/blogArticleTag/web.jpg" alt="全部" title="全部"/>
+                    </if>
+                </li>
+                <volist name="tags" id="tag">
+                    <if condition="$cate">
+                        <li class="tag-item" url="__ROOT__/index.php?s=/Blog/Article/lists/tag/{$tag.id}.html">
+                            <img class="{$tag.class}" src="__ROOT__{$tag.tag_icon}" alt="{$tag.tag_name}" id="{$tag.id}" title="{$tag.tag_name}"/>
+                        </li>
+                        <else/>
+                        <li class="tag-item" url="__ROOT__/index.php?s=/Blog/Article/lists/tag/{$tag.id}.html">
+                            <img class="{$tag.class}" src="__ROOT__{$tag.tag_icon}" alt="{$tag.tag_name}" id="{$tag.id}" title="{$tag.tag_name}"/>
+                        </li>
+                    </if>
+                </volist>
+            </ul>
+        </div>
+        <div class="blog-artical">
+            <div class="blog-articles-tag">
+                <if condition="$catelogo">
+                    <img class="current-articles-tag" src="__ROOT__{$catelogo['icon']}"  alt="全部"/>
+                    <else />
+                    <img class="current-articles-tag" src="__ROOT__/Uploads/Picture/blogArticleTag/web.jpg" alt="全部" id="" />
+                </if>
+                <span class="current-articles-title">{$category_name}</span>
+                <span class="article-change">换一换？</span>
+            </div>
+            <ul class="article-box">
+                <volist name="articles" id="articles">
+                    <li class="article-item">
+                        <a href="__ROOT__/index.php?s=/Blog/Article/index/id/{$articles.id}.html" target="_self">
+                            <span class="article-time">{$articles.time}</span>
+                            <span class="article-title">{$articles.title}</span>
+                        </a>
+                    </li>
+                </volist>
+            </ul>
+            <div class="tag-total">
+                <if condition="$length">
+                    当前标签下共有{$length}篇文章
+                    <else/>
+                    当前标签下还没有文章
+                </if>
+            </div>
+        </div>
+    </div>
+    <!--/blog main-->
+
+    <include file="./Application/Home/View/default/Public/footer.html" />
+    <include file="./Application/Home/View/default/Public/var.html" />
+    <script type="text/javascript">
+        $(function(){
+            var post = {
+                category: $('.blog-active>a').attr('id'),
+            };
+            //mouseover tag
+            $('.tag-item>img').mouseover(function(){
+                changeTag(this);
+
+                post.tag = $(this).attr('id') == undefined ? "" : $(this).attr('id');
+                post.change = 0;
+
+                ajaxPost(post);
+            });
+            //clcik tag
+            $('.tag-item>img').click(function(){
+                window.location.href= $(this).parents('.tag-item').attr('url');
+            });
+            //click change
+            $('.article-change').click(function(){
+                post.change = 1;
+                post.tag = $(this).siblings('img').attr('id');
+                
+                ajaxPost(post);
+            });
+
+            /**
+             * change aitilce list
+             * @param post
+             */
+            function ajaxPost(post){
+                $.post(
+                        Think.ROOT + '/index.php?s=/Blog/Index/index.html',
+                        post,
+                        function(data){
+                            $('.article-box').html(data["html"]);
+                            
+                            if(data["count"]){
+                                $('.tag-total').text('当前标签下共有' + data["count"] + '篇文章');
+                            }else{
+                                $('.tag-total').text('当前标签下还没有文章');
+                            }
+                        }
+                );
+            }
+
+            function changeTag(elememt){
+                $.each($('.tag-item>img'),function(index,img){
+                    $(img).removeClass('tag-active');
+                });
+                $(elememt).addClass('tag-active');
+                $(".blog-artical img").attr({src: $(elememt).attr('src'), alt: $(elememt).attr('alt'), id:$(elememt).attr('id')});
+            }
+
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<div class="setting-wrap">
+	<form action="__CONTROLLER__/setprofile/uid/{$uid}/type/person-info" method="post">
+		<div class="info-line">
+			<label class="lable-name" >昵称</label>
+			<div class="info-text">
+				<input type="text" class="info-input" name='nickname' value={$nickname}>
+			</div>
+		</div>
+		<div class="info-line">
+			<label class="lable-name" >个人介绍</label>
+			<div class="info-text">
+				<input type="text" class="info-input" name='introduce' value={$introduce}>
+			</div>
+		</div>
+		
+		<div class="info-line">
+			<label class="lable-name">城市</label>
+			<div class="info-text">
+				<select class="info-province" name='province' id="province">
+				
+				<if condition="$path_id.1 eq null">
+					<option value>选择省份</option>
+				<else />
+					<option value={$path_id.1}>{$path_name.1}</option>
+				</if>
+					<volist name="province" id="data">  
+                         <option value="{$data.id}">{$data.name}</option>
+                    </volist>   
+				</select>
+				<select class="info-city" name='city' id="city">
+				<if condition="$path_id.2 eq null">
+					<option value>选择城市</option>
+				<else />
+					<option value={$path_id.2}>{$path_name.2}</option>
+				</if>
+				</select>
+				<select class="info-area" name="town" id="town">
+					<if condition="$path_id.3 eq null">
+					<option value>选择区县</option>
+				<else />
+					<option value={$path_id.3}>{$path_name.3}</option>
+				</if>
+				</select>
+			</div>
+		</div>
+		<div class="info-line">
+			<label class="lable-name">性别</label>
+			<div class="info-text">
+				<div class="sex-select">
+					<if condition="$sex eq 0">
+						<input type="radio" name="sex" value="0" checked
+  						class="info-sex"/>保密
+  						<input type="radio" name="sex" value="1" 
+  						class="info-sex"/>男
+  						<input type="radio" name="sex" value="2" 
+  						class="info-sex"/>女
+ 					</if>
+					<if condition="$sex eq 1">
+						<input type="radio" name="sex" value="0" 
+  						class="info-sex"/>保密
+  						<input type="radio" name="sex" value="1" checked
+  						class="info-sex"/>男
+  						<input type="radio" name="sex" value="2" 
+  						class="info-sex"/>女
+ 					</if>
+					<if condition="$sex eq 2">
+						<input type="radio" name="sex" value="0" 
+  						class="info-sex"/>保密
+  						<input type="radio" name="sex" value="1" 
+  						class="info-sex"/>男
+  						<input type="radio" name="sex" value="2" checked
+  						class="info-sex"/>女
+					</if>
+					
+				</div>
+			</div>
+		</div>
+		<div class="info-line">
+			<label class="lable-name">个签</label>
+			<div class="info-text">
+				<textarea type="text" class="state-massage" name="sign">{$sign}</textarea>
+			</div>
+		</div>
+		<input type="submit" value="保存" class="sava-data"/>
+	</form>
+</div>
+<script type="text/javascript">
+        $("#province").change(
+        	function (){
+        		$.post(
+        			"__CONTROLLER__/address",
+        			{province:$(this).val()},
+        			function(data){
+        				var city=document.getElementById("city");
+        				city.innerHTML="";
+        				for(var i=0;i<data.length;i++){
+        					var html="<option value="+data[i].id+">"+data[i].name+"</option>";
+        					city.innerHTML+=html;
+        				}
+        			}
+        		)
+        	}		
+        )
+         $("#city").change(
+        	function (){
+        		$.post(
+        				"__CONTROLLER__/address",
+        			{city:$(this).val()},
+        			function(data){
+        				//alert('__CONTROLLER__/setprofile');
+        				//console.log(data);
+        				var town=document.getElementById("town");
+        				town.innerHTML="";
+        				console.log(data);
+        				for(var i=0;i<data.length;i++){
+        					var html="<option value="+data[i].id+">"+data[i].name+"</option>";
+        					town.innerHTML+=html;
+        				}
+        			}
+        		)
+        	}		
+        )
+        
+    </script>

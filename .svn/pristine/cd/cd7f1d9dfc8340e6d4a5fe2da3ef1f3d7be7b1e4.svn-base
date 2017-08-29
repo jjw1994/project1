@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <include file="./Application/Home/View/default/Public/head.html"/>
+
+    <!--private head-->
+    <meta name="author" content="Aidan Dai, webaidandai@gmail.com, www.aidandai.com"/>
+    <link rel="stylesheet" type="text/css" href="__COMMON__/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="__COMMON__/css/menu.css"/>
+    <link rel="stylesheet" type="text/css" href="__COMMON__/css/blog-nav.css"/>
+    <link rel="stylesheet" type="text/css" href="__COMMON__/css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/index-index.css"/>
+    <!--/private head-->
+</head>
+<body>
+<include file="./Application/Home/View/default/Public/menu.html" />
+<include file="./Application/Home/View/default/Public/var.html" />
+<include file="./Application/Home/View/default/Public/404.html" />
+<include file="./Application/Home/View/default/Public/footer.html" />
+</body>
+</html>

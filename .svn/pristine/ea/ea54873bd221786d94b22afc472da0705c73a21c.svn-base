@@ -1,0 +1,39 @@
+<nav>
+	<ul class="user-nav">
+		<li class="go-index">
+			<a href="{$urlArr.home}" title="主页">
+				<i></i>
+			</a>
+		</li>
+		<li class="at-user">
+			<a href="{$urlArr.at}">
+				提到我的
+			</a>
+		</li>
+		<li class="user-articale">
+			<a href="{$urlArr.articale}">
+				文章
+			</a>
+		</li>
+		<li class="user-collects">
+			<a href="{$urlArr.collect}">
+				收藏
+			</a>
+		</li>
+		<li class="user-notes">
+			<a href="{$urlArr.note}">
+				笔记
+			</a>
+		</li>
+		<li class="user-greets">
+			<a href="{$urlArr.greet}">
+				赞过
+			</a>
+		</li>
+		<li class="user-comments">
+			<a href="{$urlArr.comment}">
+				评论
+			</a>
+		</li>
+	</ul>
+</nav>

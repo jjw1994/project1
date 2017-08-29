@@ -1,0 +1,16 @@
+<nav>
+	<ul class="info-nav">
+		<a href="{$urlinfo.personinfo}">
+			<li class="person-info">个人资料</li>
+		</a>
+		<a href="{$urlinfo.setpicture}">
+			<li class="set-picture">头像设置</li>
+		</a>
+		<a href="{$urlinfo.testmail}">
+			<li class="mail-test">邮箱验证</li>
+		</a>
+		<a href="{$urlinfo.changepwd}">
+			<li class="change-pwd">修改密码</li>
+		</a>
+	</ul>
+</nav>

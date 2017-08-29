@@ -1,0 +1,41 @@
+<div class="hot-article">
+	<h4 class="hot-title">热门推荐</h4>
+	<a class="hot-change" href="javascript:void(0);">换一换</a>
+	<ul class="article-head">
+		<li>
+			<a href="">
+				UI设计师应掌握的知识体系及职业...
+			</a>
+		</li>
+		<li>
+			<a href="">
+				UI设计师应掌握的知识体系及职业...
+			</a>
+		</li><li>
+			<a href="">
+				UI设计师应掌握的知识体系及职业...
+			</a>
+		</li><li>
+			<a href="">
+				UI设计师应掌握的知识体系及职业...
+			</a>
+		</li><li>
+			<a href="">
+				UI设计师应掌握的知识体系及职业...
+			</a>
+		</li><li>
+			<a href="">
+				UI设计师应掌握的知识体系及职业...
+			</a>
+		</li><li>
+			<a href="">
+				UI设计师应掌握的知识体系及职业...
+			</a>
+		</li>
+		<li>
+			<a href="">
+				UI设计师应掌握的知识体系及职业...
+			</a>
+		</li>
+	</ul>
+</div>

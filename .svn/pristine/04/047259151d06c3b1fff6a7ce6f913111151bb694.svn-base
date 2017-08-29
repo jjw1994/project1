@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <include file="./Application/Home/View/default/Public/head.html"/>
+    <meta name="author" content="Aidan Dai, webaidandai@gmail.com, www.aidandai.com"/>
+    <link rel="stylesheet" type="text/css" href="__COMMON__/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="__COMMON__/css/menu.css"/>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/page.css">
+    <link rel="stylesheet" type="text/css" href="__CSS__/index-search.css">
+</head>
+<body>
+<include file="./Application/Home/View/default/Public/menu.html" />
+<div id="head-search">
+    <div id="search">
+        <div>
+            <input  id="search-input" type="text" placeholder="&nbsp;&nbsp;搜索内容">
+        </div>
+        <div>
+            <button type="button" id="search-button">
+                <img id="search-img" src="__PUBLIC__/Blog/images/search_img.png">
+            </button>
+        </div>
+    </div>
+</div>
+<div id="head-article-user">
+    <div id="article-user">
+        <ul id="article-user-ul">
+            <li class="article-user-li"><a href="">文章</a></li>
+            <li class="article-user-li"><a href="">用户</a></li>
+        </ul>
+    </div>
+</div>
+<div id="main">
+    <div id="main-order">
+        <ul id="main-order-ul">
+            <li class="main-order-li"><a href="">热度排序</a></li>
+            <li class="main-order-li"><a href="">时间排序</a></li>
+        </ul>
+    </div>
+    <div id="left">
+        <ul>
+            <li class="article-li">
+                <div class="article">【&nbsp;文章&nbsp;】</div>
+                <div class="articleinfo">
+                    <div class="articleinfo-head">新发布文章怎么能够被百度快速收录
+                    </div>
+                    <div class="articleinfo-content">
+                        <p>
+                        诺基亚（Nokia Corporation）是一家总部位于芬兰埃斯波 ，主要从事移动通信产品生产的跨国公司。诺基亚成立于1865年，当时以造纸为主业，后来逐步向胶鞋、轮胎、电缆等领域扩展...
+                        </p>
+                    </div>
+                    <div class="articleinfo-foot">
+                        作者：<span class="author">钟锦</span>&nbsp;&nbsp;&nbsp;2015-10-24
+                    </div>
+                </div>
+            </li>
+            <li class="article-li">
+                <div class="article">【&nbsp;文章&nbsp;】</div>
+                <div class="articleinfo">
+                    <div class="articleinfo-head">新发布文章怎么能够被百度快速收录
+                    </div>
+                    <div class="articleinfo-content">
+                        <p>
+                        诺基亚（Nokia Corporation）是一家总部位于芬兰埃斯波 ，主要从事移动通信产品生产的跨国公司。诺基亚成立于1865年，当时以造纸为主业，后来逐步向胶鞋、轮胎、电缆等领域扩展...
+                        </p>
+                    </div>
+                    <div class="articleinfo-foot">
+                        作者：<span class="author">钟锦</span>&nbsp;&nbsp;&nbsp;2015-10-24
+                    </div>
+                </div>
+            </li>
+            <li class="article-li">
+                <div class="article">【&nbsp;文章&nbsp;】</div>
+                <div class="articleinfo">
+                    <div class="articleinfo-head">新发布文章怎么能够被百度快速收录
+                    </div>
+                    <div class="articleinfo-content">
+                        <p>
+                        诺基亚（Nokia Corporation）是一家总部位于芬兰埃斯波 ，主要从事移动通信产品生产的跨国公司。诺基亚成立于1865年，当时以造纸为主业，后来逐步向胶鞋、轮胎、电缆等领域扩展...
+                        </p>
+                    </div>
+                    <div class="articleinfo-foot">
+                        作者：<span class="author">钟锦</span>&nbsp;&nbsp;&nbsp;2015-10-24
+                    </div>
+                </div>
+            </li>
+            <li class="article-li">
+                <div class="article">【&nbsp;文章&nbsp;】</div>
+                <div class="articleinfo">
+                    <div class="articleinfo-head">新发布文章怎么能够被百度快速收录
+                    </div>
+                    <div class="articleinfo-content">
+                        <p>
+                        诺基亚（Nokia Corporation）是一家总部位于芬兰埃斯波 ，主要从事移动通信产品生产的跨国公司。诺基亚成立于1865年，当时以造纸为主业，后来逐步向胶鞋、轮胎、电缆等领域扩展...
+                        </p>
+                    </div>
+                    <div class="articleinfo-foot">
+                        作者：<span class="author">钟锦</span>&nbsp;&nbsp;&nbsp;2015-10-24
+                    </div>
+                </div>
+            </li>
+            <li class="article-li">
+                <div class="article">【&nbsp;文章&nbsp;】</div>
+                <div class="articleinfo">
+                    <div class="articleinfo-head">新发布文章怎么能够被百度快速收录
+                    </div>
+                    <div class="articleinfo-content">
+                        <p>
+                        诺基亚（Nokia Corporation）是一家总部位于芬兰埃斯波 ，主要从事移动通信产品生产的跨国公司。诺基亚成立于1865年，当时以造纸为主业，后来逐步向胶鞋、轮胎、电缆等领域扩展...
+                        </p>
+                    </div>
+                    <div class="articleinfo-foot">
+                        作者：<span class="author">钟锦</span>&nbsp;&nbsp;&nbsp;2015-10-24
+                        
+                    </div>
+                </div>
+            </li>
+            <li class="article-li">
+                <div class="article">【&nbsp;文章&nbsp;】</div>
+                <div class="articleinfo">
+                    <div class="articleinfo-head">新发布文章怎么能够被百度快速收录
+                    </div>
+                    <div class="articleinfo-content">
+                        <p>
+                        诺基亚（Nokia Corporation）是一家总部位于芬兰埃斯波 ，主要从事移动通信产品生产的跨国公司。诺基亚成立于1865年，当时以造纸为主业，后来逐步向胶鞋、轮胎、电缆等领域扩展...
+                        </p>
+                    </div>
+                    <div class="articleinfo-foot">
+                        作者：<span class="author">钟锦</span>&nbsp;&nbsp;&nbsp;2015-10-24
+                        
+                    </div>
+                </div>
+            </li>
+            <li class="article-li article-end">
+                <div class="article">【&nbsp;文章&nbsp;】</div>
+                <div class="articleinfo">
+                    <div class="articleinfo-head">新发布文章怎么能够被百度快速收录
+                    </div>
+                    <div class="articleinfo-content">
+                        <p>
+                        诺基亚（Nokia Corporation）是一家总部位于芬兰埃斯波 ，主要从事移动通信产品生产的跨国公司。诺基亚成立于1865年，当时以造纸为主业，后来逐步向胶鞋、轮胎、电缆等领域扩展...
+                        </p>
+                    </div>
+                    <div class="articleinfo-foot">
+                        作者：<span class="author">钟锦</span>&nbsp;&nbsp;&nbsp;2015-10-24
+                        
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="right">
+        <div id="more">
+            <a href="">去更多世界看看?></a>
+        </div>
+        <div id="picture">
+            <img src="__PUBLIC__/Blog/images/search-right.jpg" width="270px" height="400px">
+        </div>
+    </div>
+    
+</div>
+<include file="./Application/Home/View/default/Public/page.html" />
+</body>
+</html>

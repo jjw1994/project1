@@ -1,0 +1,14 @@
+<nav>
+	<div class="bar_left">
+		<p>lsgo&nbsp团队技术博客</p>
+	</div>
+	<div class="bar_right">
+		<ul class="setlist">
+			<li class="li1"><a href="##" class="seticon"><span class="glyphicon glyphicon-home"></span></a></li>
+			<li class="li2"><a href="##" class="seticon eite">@</a></li>
+			<li class="li3"><a href="##" class="seticon"><span class="glyphicon glyphicon-envelope"></a></li>
+			<li class="li4"><a href="##" class="seticon"><span class="glyphicon glyphicon-star"></a></li>
+			<li class="li5"><a href="##" class="seticon"><span class="glyphicon glyphicon-cog"></a></li>
+		</ul>
+	</div>
+</nav>

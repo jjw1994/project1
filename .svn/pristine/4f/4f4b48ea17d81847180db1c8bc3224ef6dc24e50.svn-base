@@ -1,0 +1,20 @@
+<!--blog-nav-->
+<div class="big-blog-nav-warpper">
+    <ul class="big-blog-nav">
+        <li id="blog-logo">
+            <a class="blog-logo" href="__ROOT__/index.php?s=/Blog/Index/index.html" target="_self">lsgo 团队技术博客</a>
+        </li>
+        <volist name="blogNav" id="nav">
+            <li class="{$nav.class}">
+                <a id="{$nav.id}" href="__ROOT__/index.php?s=/Blog/Article/lists/category/{$nav.id}.html" target="_self">{$nav.title}</a>
+            </li>
+        </volist>
+        <li class="blog-search">
+            <form class="blog-search" name="blog-search" action="__ROOT__/index.php?s=/Blog/Search/index.html" methed="get">
+                <lable class="blog-seo-tip">please type keywords</lable>
+                <input class="blog-search-input" name="search-input" type="text">
+            </form>
+        </li>
+    </ul>
+</div>
+<!--/blog-nav-->

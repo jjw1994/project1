@@ -1,0 +1,162 @@
+/**
+ *  +----------------------------------------------------------------------
+ *  | LSGOJavaScriptFileInfo
+ *  +----------------------------------------------------------------------
+ *  | Copyright (c) LSGOGroup
+ *  +----------------------------------------------------------------------
+ *  | Author: AidanDai
+ *  +----------------------------------------------------------------------
+ *  | Date: 2015/10/3
+ *  +----------------------------------------------------------------------
+ *  | Time: 15:07
+ *  +----------------------------------------------------------------------
+ */
+//切换选项卡
+$(function(){
+    $('.login-open').on('click',function(){
+        if(!$(this).hasClass('lr-title-on')){
+            $(this).addClass('lr-title-on');
+            $('.register-open').removeClass('lr-title-on');
+            $('#register').attr('style','display: none');
+            $('#login').attr('style','display: block');
+        }
+    });
+    $('.register-open').on('click',function(){
+        if(!$(this).hasClass('lr-title-on')){
+            $(this).addClass('lr-title-on');
+            $('.login-open').removeClass('lr-title-on');
+            $('#login').attr('style','display: none');
+            $('#register').attr('style','display: block');
+        }
+    });
+});
+//注册验证
+var rgEmial = /^[a-z\d]+(\.[a-z\d]+)*@([\da-z](-[\da-z])?)+(\.{1,2}[a-z]+)+$/,
+    rgPassword = /^[a-zA-Z0-9!@#$%^&*-_]{6,16}$/,
+    rgUsername = /^[\u2E80-\u9FFFa-zA-Z0-9_-]{2,18}$/,
+    rgVerify = /^[a-zA-Z0-9]/;
+var arEmail = ['邮箱不能为空！','邮箱格式不正确！'],
+    arPassword = ['密码不能为空!','请输入6-16位密码，区分大小写，不能使用空格！'],
+    arUsername = ['昵称不能为空!','昵称2-18位中英文、数字及下划线！'],
+    arVerify = ['验证码不能为空！','验证码错误'];
+
+function check(eleClass,rg,tip){
+    var eleTipClass = eleClass + '-tip';
+    $(eleClass).focus(function(){
+        $(eleTipClass).text('');
+    });
+    $(eleClass).blur(function(){
+        var value = $(this).val();
+        var bl = rg.test(value);
+        if(value && !bl){
+            $(eleTipClass).text(tip[1]);
+        }
+    });
+}
+
+check(".l-email",rgEmial,arEmail);
+check(".l-password",rgPassword,arPassword);
+check(".l-verify",rgVerify,arVerify);
+check(".r-email",rgEmial,arEmail);
+check(".r-password",rgPassword,arPassword);
+check(".r-username",rgUsername,arUsername);
+check(".r-verify",rgVerify,arVerify);
+
+$('.login-action').click(function(){
+    if(!$('.l-email').val()){
+        $('.l-email-tip').text(arEmail[0]);
+    }else if(!$('.l-password').val()){
+        $('.l-password-tip').text(arPassword[0]);
+    }else if(!$('.l-verify').val()){
+        $('.l-verify-tip').text(arVerify[0]);
+    }else if(rgEmial.test($('.l-email').val())
+        && rgPassword.test($('.l-password').val())
+        && rgVerify.test($('.l-verify').val())
+    ){
+        button('登 录 中');
+        var objLogin = {
+            email: $('.l-email').val(),
+            password: $('.l-password').val(),
+            verify: $('.l-verify').val()
+        };
+        $.post(
+            Think.ROOT + '/index.php/Home/User/login.html',
+            objLogin,
+            function(data){
+                window.setTimeout(button('登 录'),10000);
+                if(data.status){
+                    window.location.href = Think.ROOT + '/index.php?s=/Blog/Index/index.html';
+                }else{
+                    $('.login-error-tip').text(data.msg);
+                }
+            }
+        );
+    }else{
+        check(".l-email",rgEmial,arEmail);
+        check(".l-password",rgPassword,arPassword);
+        check(".l-verify",rgVerify,arVerify);
+    }
+    var stVerifyUrl = $('.verify-content').attr('src'),
+        src = stVerifyUrl.replace(/\.(?=html)/g,'/id/' + Math.random() + '.');
+    $('img.js-verify-refresh').attr('src',src);
+});
+$('.register-action').click(function(){
+    if(!$('.r-email').val()){
+        $('.r-email-tip').text(arEmail[0]);
+    }else if(!$('.r-password').val()){
+        $('.r-password-tip').text(arPassword[0]);
+    }else if(!$('.r-username').val()){
+        $('.r-username-tip').text(arVerify[0]);
+    }else if(!$('.r-verify').val()){
+        $('.r-verify-tip').text(arVerify[0]);
+    }else if(rgEmial.test($('.r-email').val())
+        && rgPassword.test($('.r-password').val())
+        && rgUsername.test($('.r-username').val())
+        && rgVerify.test($('.r-verify').val())
+    ){
+        button('注 册 中');
+        var objLogin = {
+            email: $('.r-email').val(),
+            password: $('.r-password').val(),
+            username: $('.r-username').val(),
+            verify: $('.r-verify').val()
+        };
+        $.post(
+            Think.ROOT + '/index.php/Home/User/register.html',
+            objLogin,
+            function(data){
+                window.setTimeout(button('注 册'),10000);
+                if(data.status){
+                    window.location.href = Think.ROOT + '/index.php?s=/Home/User/setprofile.html';
+                }else{
+                    $('.register-error-tip').text(data.msg);
+                }
+            }
+        );
+    }else{
+        check(".r-email",rgEmial,arEmail);
+        check(".r-password",rgPassword,arPassword);
+        check(".r-username",rgUsername,arUsername);
+        check(".r-verify",rgVerify,arVerify);
+    }
+    var stVerifyUrl = $('.verify-content').attr('src'),
+        src = stVerifyUrl.replace(/\.(?=html)/g,'/id/' + Math.random() + '.');
+    $('img.js-verify-refresh').attr('src',src);
+});
+
+//刷新验证码
+function reloadVerify(){
+    var stVerifyUrl = $('.verify-content').attr('src'),
+        src = stVerifyUrl.replace(/\.(?=html)/g,'/id/' + Math.random() + '.');
+    $('.js-verify-refresh').click(function(){
+        $('img.js-verify-refresh').attr('src',src);
+    });
+    return false;
+}
+reloadVerify();
+
+// click提交按钮改变样式
+function button(text){
+    $('button').text(text);
+}
+

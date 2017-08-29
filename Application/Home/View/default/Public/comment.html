@@ -1,0 +1,112 @@
+<!--view comment-->
+<volist name="comment" id="data" key="k">
+    <div class="view-comment">
+        <input type="hidden" name="comment-id" value="{$data.id}" />
+        <div class="view-comment-item-title">
+            <span class="comment-user-name">
+                <a href="#" target="_self">{$data.username}</a>
+            </span>
+            <span>于 {$data.create_time} 说：</span>
+            <span class="show-comment-replay">回复</span>
+            <img src="__ROOT__{$data.user_headimg}" />
+            <span class="view-conment-id">{$k} 楼</span>
+        </div>
+        <div class="view-comment-item" id="view-comment-item{$k}">
+            <textarea style="display:none;">{$data.comment}</textarea>
+        </div>
+
+        <!--replay comment-->
+        <volist name="data.child" key="k1" id="replay_data">
+            <div class="comment-replay-box">
+                <div class="replay-item">
+                    <div class="replay-item-title">
+                        <img src="__ROOT__{$replay_data.user_headimg}" />
+                        <span class="replay-user-name">
+                            <a href="#" target="_self">{$replay_data.username}</a>
+                            <span class="replay-user-name">
+                                <span>(回复)</span>
+                                <a href="#" target="_self">{$replay_data.replayed_username}</a>
+                            </span>
+                        </span>
+                        <span>于 {$replay_data.create_time} 说：</span>
+                        <span class="show-replay">回复</span>
+                    </div>
+                    <div class="replay-content">
+                        {$replay_data.replay_comment}
+                    </div>
+                    <div class="replay-box">
+                        <input type="text" name="replay-comment" placeholder="回复 {$replay_data.username}">
+                        <button class="replay-submit">回复</button>
+                        <input type="hidden" value="{$replay_data.user_id}" name="replayed-user-id" />
+                    </div>
+                </div>
+            </div>
+        </volist>
+        <!--/replay comment-->
+
+        <div class="comment-replay">
+            <input type="text" name="replay-comment" placeholder="回复 {$data.username}">
+            <button class="comment-replay-submit replay-submit">回复</button>
+            <input type="hidden" value="{$data.user_id}" name="replayed-user-id" />
+        </div>
+    </div>
+</volist>
+<!--/view comment-->
+
+<!--write comment-->
+<div class="comment">
+    <link rel="stylesheet" href="__ROOT__/mdeditor/css/editormd.css" />
+    <div id="comment-editormd"></div>
+    <div class="coment-but-group">
+        <button id="comment-submit" class="comment-but">评 论</button>
+    </div>
+    <script src="__ROOT__/mdeditor/write/js/jquery.min.js"></script>
+    <script src="__ROOT__/mdeditor/editormd.js"></script>
+    <script type="text/javascript">
+        var testEditor;
+
+        $(function() {
+            testEditor = editormd("comment-editormd", {
+                width: "100%",
+                height: 240,
+                path : '__ROOT__/mdeditor/lib/',
+                toolbarIcons : function() {
+                    return [
+                        "bold","|", "italic", "|",
+                        "quote", "|", "h1",  "|", "link", "|",
+                        "reference-link", "|","image",
+                        "|","emoji","|", "fullscreen",
+                        "|", "clear", "|", "help","|",
+                        "info"];
+                },
+                placeholder : "写评论...",
+                lineNumbers : false,
+                autoFocus : false,
+                watch : false,                // 关闭实时预览
+                emoji : true,
+
+                imageUpload : true,
+                imageFormats : ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
+                imageUploadURL : Think.ROOT + "/mdeditor/write/php/upload.php?test=dfdf",
+
+                /*
+                 上传的后台只需要返回一个 JSON 数据，结构如下：
+                 {
+                 success : 0 | 1,           // 0 表示上传失败，1 表示上传成功
+                 message : "提示的信息，上传成功或上传失败及错误信息等。",
+                 url     : "图片地址"        // 上传成功时才返回
+                 }
+                 */
+            });
+        });
+        $(function(){
+            $('.show-replay').bind('click',function(){
+                $(this).parents('.replay-item').children('.replay-box').toggleClass('replay-box-show');
+            });
+            $('.show-comment-replay').bind('click',function(){
+                $(this).parents('.view-comment').children('.comment-replay').toggleClass('comment-replay-show');
+            });
+        });
+    </script>
+</div>
+<!--/write comment-->

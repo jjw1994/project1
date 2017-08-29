@@ -1,0 +1,39 @@
+<nav>
+	<ul class="user-nav">
+		<li class="go-index">
+			<a href="">
+				<i></i>
+			</a>
+		</li>
+		<li class="at-user">
+			<a href="">
+				提到我的
+			</a>
+		</li>
+		<li class="user-articale">
+			<a href="">
+				文章
+			</a>
+		</li>
+		<li class="user-collects">
+			<a href="">
+				收藏
+			</a>
+		</li>
+		<li class="user-notes">
+			<a href="">
+				笔记
+			</a>
+		</li>
+		<li class="user-greets">
+			<a href="">
+				赞过
+			</a>
+		</li>
+		<li class="user-comments">
+			<a href="">
+				评论
+			</a>
+		</li>
+	</ul>
+</nav>

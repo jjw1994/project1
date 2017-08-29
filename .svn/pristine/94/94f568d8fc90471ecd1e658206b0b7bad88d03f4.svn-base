@@ -1,0 +1,124 @@
+header{
+    width: 100%;
+    min-width: 1000px;
+    height: 80px;
+    background-color: #00A185;
+}
+.header-warpper{
+    margin: 0 auto;
+    width: 1000px;
+    height: 100%;
+}
+div#logo{
+    float: left;
+    width: 80px;
+    height:80px;
+    margin: 0 240px 0 2%;
+    background-image: url("../../common/images/logo.png");
+    background-size: contain;
+    cursor: pointer;
+}
+a.logo{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+#menu>li{
+    list-style: none;
+    float: left;
+}
+#menu>li.active{
+    background-color: #138874;
+}
+#menu>li>a{
+    display: block;
+    height: 80px;
+    width: 80px;
+    font-size: 14px;
+    line-height: 80px;
+    text-align: center;
+    color: #fff;
+}
+#menu>li.menu-active>a{
+    color: #316747;
+}
+#menu>li.user{
+    float: right;
+    margin: 0 2% 0 0;
+}
+.user-logo,
+.user-logo>a{
+    display: block;
+    float: right;
+    width: 80px;
+    height: 80px;
+}
+.user-logo>a>img{
+    display: block;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 30px;
+    margin: 20px 20px;
+}
+
+
+.user-logo{
+    position: relative;
+}
+.user-logo:hover .user-info{
+    visibility: visible;
+}
+.user-info-active .user-info{
+    display: block;
+}
+.user-info{
+    visibility: hidden;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background-color: #00a185;
+    opacity: 0.9;
+    
+    width: 120px;
+    z-index: 1000;
+}
+.user-info ul{
+    width: 100%;
+}
+.user-info ul li{
+    background-image:url('../images/user-action.png');
+    background-repeat: no-repeat;
+    list-style: none;
+    height: 40px;
+    width: 100%;
+}
+.user-info ul li{
+    border-top: 1px solid #01473b;
+    opacity: 0.9;
+}
+.user-info ul li:first-child{
+    border-top: none;
+}
+.user-info li a{
+    height: 40px;
+    padding-left:60px;
+    line-height: 40px;
+    text-decoration: none;
+    color: #fff;
+}
+.user-home{
+    background-position: -4px 0;
+}
+.user-letter{
+    background-position: -4px -40px;
+}
+.user-collect{
+    background-position: -4px -80px;
+}
+.user-set{
+    background-position: -4px -120px;
+}
+.login-out{
+    background-position: -4px -160px;
+}

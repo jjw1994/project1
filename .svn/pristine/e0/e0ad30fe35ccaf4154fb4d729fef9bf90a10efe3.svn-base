@@ -1,0 +1,123 @@
+header{
+    width: 100%;
+    min-width: 1000px;
+    height: 80px;
+    background-color: #00A185;
+}
+.header-warpper{
+    margin: 0 auto;
+    width: 1000px;
+    height: 100%;
+}
+div#logo{
+    float: left;
+    width: 80px;
+    height:80px;
+    margin: 0 240px 0 2%;
+    background-image: url("../../common/images/logo.png");
+    background-size: contain;
+    cursor: pointer;
+}
+a.logo{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+#menu>li{
+    float: left;
+}
+#menu>li.active{
+    background-color: #138874;
+}
+#menu>li>a{
+    display: block;
+    height: 80px;
+    width: 80px;
+    font-size: 14px;
+    line-height: 80px;
+    text-align: center;
+    color: #fff;
+}
+#menu>li.menu-active>a{
+    color: #316747;
+}
+#menu>li.user{
+    float: right;
+    margin: 0 2% 0 0;
+}
+.user-logo,
+.user-logo>a{
+    display: block;
+    float: right;
+    width: 80px;
+    height: 80px;
+    border-radius: 30px;
+}
+.user-logo>a>img{
+    display: block;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 30px;
+}
+.user-logo{
+    position: relative;
+    padding: 20px 60px 20px 0;
+}
+.user-logo:hover .user-info{
+    visibility: visible;
+}
+.user-info-active .user-info{
+    display: block;
+}
+.user-info{
+    visibility: hidden;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 300px;
+    background-color: #fff;
+    z-index: 1000;
+}
+.user-info a{
+    display: block;
+    float: left;
+    height: 40px;
+    width: 60px;
+}
+.user-logo-top{
+    background: #f34131 url('../images/user_logo_top.png') no-repeat center 0;
+    height: 100px;
+    position: relative;
+}
+.user-logo-top img{
+    height: 60px;
+    width: 60px;
+    border-radius: 30px;
+    margin: 20px;
+}
+.username{
+    position: absolute;
+    left: 100px;
+    top: 0;
+    padding-left: 20px;
+    font-size: 20px;
+    color: #fff;
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+    line-height: 100px;
+}
+.other-info{
+    background-color: #dadada;
+    height: 40px;
+}
+.other-info a{
+    display: block;
+    float: left;
+    width: 50%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #787d82;
+}

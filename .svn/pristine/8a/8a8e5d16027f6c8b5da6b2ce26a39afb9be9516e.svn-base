@@ -1,0 +1,41 @@
+<?php
+/**
+ *  +----------------------------------------------------------------------
+ *  | LSGOPHPFileInfo
+ *  +----------------------------------------------------------------------
+ *  | Copyright (c) LSGOGroup
+ *  +----------------------------------------------------------------------
+ *  | Author: AidanDai
+ *  +----------------------------------------------------------------------
+ *  | Date: 2015/9/12
+ *  +----------------------------------------------------------------------
+ *  | Time: 11:23
+ *  +----------------------------------------------------------------------
+ */
+namespace Home\Controller;
+use Think\Controller;
+
+/**
+ * 系统默认模块控制器基类
+ * 系统默认模块公共方法
+ */
+class BaseController extends Controller {
+
+    /**
+     * LSGOPHPfunctioninfo
+     * 函数功能：搜索功能（关键字：标签，标题）
+     * Author: 钟锦
+     * 参数 : string 关键字
+     * 返回值 : array[][] 搜索结果
+     */
+    public function search($key){
+        //$tag = M('BlogArticleTag');
+        $title = M('Document');
+        //$map1['tag_name'] = array('like','%'.$key.'%');
+        $map2['title'] = array('LIKE',"%g%");
+        $data = array();
+        //$data1 = $tag->where($map1)->select();
+        $data2 = $title->where($map2)->select();
+        return $data2;
+    }
+}

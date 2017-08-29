@@ -1,0 +1,64 @@
+<div class="user-article">
+	<!-- <span class="section-title">文章</span> -->
+	<ul class="atricle-list">
+		<volist name="lists" id="vo">
+			<li>
+					<div class="tags">
+						<volist name="vo.tag_ids" id="tag">
+							<span class="unique">{$tags.$tag.tag_name}</span>
+						</volist>
+					</div>
+					<a class="particular-head" href="{:U("Article/index",array("id"=>$vo["id"]))}" target="_self">
+						{$vo.title}
+					</a>
+					<div class="articale-info">
+						<span class="author-name">作者：{$vo.username}</span>
+						<span class="right-info">
+							<span class="update-time">
+								<?php echo date("Y-m-d H:i:s",$vo['update_time']);?>
+							</span>
+							<span class="view">
+								阅读: <span class="number">({$vo.view})</span>
+							</span>
+							<span class="view">
+								评论: <span class="number">({$vo.comment})</span>
+							</span>
+						</span>
+					</div>
+				</li>
+<!-- 				<span class="read-number">
+					231
+				</span>
+				<span class="particular-content">
+					UI设计师应掌握的知识体系及职业规划UI设计师应掌握的知识体系UI设计师应掌握的知识体系及职业规划UI设计师应掌握的知识体系及职业规划UI设计师应掌握的知识体系UI设计师应掌握的
+				</span> -->
+			<!-- </a>	 -->
+		</volist>
+		<!-- <li>
+			<a href="">
+				<span class="particular-head">
+					UI设计师应掌握的知识体系及职业规划
+				</span>
+				<span class="read-number">
+					231
+				</span>
+				<span class="particular-content">
+					UI设计师应掌握的知识体系及职业规划UI设计师应掌握的知识体系UI设计师应掌握的知识体系及职业规划UI设计师应掌握的知识体系及职业规划UI设计师应掌握的知识体系UI设计师应掌握的
+				</span>
+			</a>	
+		</li>
+		<li>
+			<a href="">
+				<span class="particular-head">
+					UI设计师应掌握的知识体系及职业规划
+				</span>
+				<span class="read-number">
+					231
+				</span>
+				<span class="particular-content">
+					UI设计师应掌握的知识体系及职业规划UI设计师应掌握的知识体系UI设计师应掌握的知识体系及职业规划UI设计师应掌握的知识体系及职业规划UI设计师应掌握的知识体系UI设计师应掌握的
+				</span>
+			</a>	
+		</li> -->
+	</ul>
+</div>

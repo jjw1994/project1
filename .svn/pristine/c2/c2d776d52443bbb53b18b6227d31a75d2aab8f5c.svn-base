@@ -1,0 +1,43 @@
+<?php
+/**
+ *  +----------------------------------------------------------------------
+ *  | LSGOPHPFileInfo
+ *  +----------------------------------------------------------------------
+ *  | Copyright (c) LSGOGroup
+ *  +----------------------------------------------------------------------
+ *  | Author: AidanDai
+ *  +----------------------------------------------------------------------
+ *  | Date: 2015/10/16
+ *  +----------------------------------------------------------------------
+ *  | Time: 15:54
+ *  +----------------------------------------------------------------------
+ */
+/**
+ * LSGOPHPfunctioninfo
+ * blog search
+ * Author: aidan Dai
+ * CreateTime: 15:54
+ */
+namespace Blog\Controller;
+
+/**
+ * Class SearchController
+ * @package Blog\controller
+ */
+class SearchController extends BaseController
+{
+
+    /**
+     * LSGOPHPFunctionInfo
+     * function introduce:blog search
+     * @param null
+     * @return null
+     * @author Aidan Dai
+     */
+    public function index(){
+       $this->display('index');
+    }
+    public function test(){
+        dump("uisdhgfsefs");
+    }
+}

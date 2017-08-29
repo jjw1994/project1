@@ -1,0 +1,208 @@
+body{
+    width: 100%;
+    height: 100%;
+    min-height: 450px;
+    background-image: url('../images/login_1600_850.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.lr-bg1{
+    position: absolute;
+    bottom: 32%;
+    left: 16%;
+    width: 375px;
+    height: 375px;
+    background-image: url('../images/lr-bg1_375.png');
+}
+.lr-big-title{
+    width: 330px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -50px 0 0 -165px;
+}
+.lr-big-title h1 {
+    height: 50px;
+    font-family: 'ËÎÌו';
+    font-size: 30px;
+    color: #fff;
+    font-weight: 100;
+}
+.login-register-box{
+    position: absolute;
+    top: 24%;
+    right: 6%;
+    width: 400px;
+    background-color: #fff;
+}
+.lr-title{
+    height: 50px;
+    width: 96%;
+    font-size: 18px;
+    color: #d0d0d0;
+    line-height: 50px;
+    padding-left: 4%;
+    border-bottom: 1px solid #d0d0d0;
+}
+.lr-title span{
+    display: inline-block;
+    height: 50px;
+    padding: 0 15px;
+    cursor: pointer;
+}
+.lr-title-on{
+    border-bottom: 1px solid #f01400;
+    color: #f01400;
+}
+.lr-title span:hover{
+    border-bottom: 1px solid #f01400;
+    color: #f01400;
+}
+#login{
+    width: 340px;
+    height: 340px;
+    margin: 0;
+    padding: 0 30px 30px;
+}
+#register{
+    display: none;
+    width: 340px;
+    height: 360px;
+    margin: 0;
+    padding: 0 30px 30px;
+}
+.login-box{
+    width: 340px;
+    height: 280px;
+}
+.login-box>p.error{
+    height: 30px;
+    width: 100%;
+}
+.group-input{
+    height: 70px;
+    width: 100%;
+    position: relative;
+}
+.login-box>.group-input>input{
+    position: absolute;
+    top: 0;
+    height: 38px;
+    width: 288px;
+    padding-left: 48px;
+    border: 1px solid #D0D6D9;
+    outline: none;
+    font-size: 14px;
+}
+.group-input p{
+    position: absolute;
+    top: 40px;
+    height: 30px;
+    width: 100%;
+}
+.group-input input:focus{
+    border: 1px solid #98a1a6;
+}
+.verify-box{
+    height: 40px;
+    width: 100%;
+}
+input[name='verify']{
+    position: absolute;
+    top: 0;
+    height: 40px;
+    width: 120px;
+    padding: 0 0 0 10px;
+    outline: none;
+    border: 1px solid #D0D6D9;
+}
+.verify-content{
+    position: absolute;
+    left: 144px;
+    display: inline-block;
+    height: 42px;
+    width: 80px;
+    background-color: #002240;
+    cursor: pointer;
+}
+.verify-reload{
+    position: absolute;
+    right: 4px;
+    display: inline-block;
+    height: 42px;
+    width: 102px;
+    font-size: 14px;
+    line-height: 42px;
+    color: #5e5e5e;
+    cursor: pointer;
+}
+.verify-reload:hover{
+    color: #f01400;
+}
+.error{
+    color: red !important;
+    font-size: 14px;
+    line-height: 30px;
+}
+.login-tip{
+    height: 40px;
+    width: 100%;
+    font-size: 14px;
+}
+.auto-login-aigin p{
+    display: inline-block;
+}
+.auto-login-aigin{
+    float: left;
+    width: 50%;
+    height: 100%;
+    line-height: 40px;
+    color: #5e5e5e;
+}
+.forget-pwd a{
+    float: left;
+    display: block;
+    height: 40px;
+    width: 45%;
+    line-height: 40px;
+    padding-right: 5%;
+    text-align: right;
+    color: #5e5e5e;
+}
+.forget-pwd a:hover{
+    color: red;
+}
+input[name='email']{
+    background: #fff url("../images/rl-sprite.png") no-repeat;
+    background-position: -80px -678px;
+}
+input[name='username']{
+    background: #fff url("../images/rl-sprite.png") no-repeat;
+    background-position: -80px -726px;
+}
+input[name='password']{
+    background: #fff url("../images/rl-sprite.png") no-repeat;
+    background-position: -80px -774px;
+}
+.login-action{
+    width: 100%;
+    height: 40px;
+    background-color: red;
+    border: none;
+    outline: none;
+    color: #fff;
+}
+.register-action{
+    width: 100%;
+    height: 40px;
+    background-color: red;
+    border: none;
+    outline: none;
+    color: #fff;
+}
+.login-action:hover,
+.register-action:hover{
+    background-color: #ff6464;
+    border-color: #ff6464;
+}

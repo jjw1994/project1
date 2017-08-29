@@ -1,0 +1,12 @@
+<div id="article-list">
+    <div class="tag-box">
+        <volist name="categoryTag" id="tag" key="k">
+            <a class="{$tag.class}" href="__ROOT__/index.php?s=/Blog/Article/index/category/2/tag/{$tag.id}/id/{$id}.html" target="_self">{$tag.tag_name}</a>
+        </volist>
+    </div>
+    <div class="article-list-box">
+        <volist name="article_list" id="list">
+            <a class="list-article-item" href="__ROOT__/index.php?s=/Blog/Article/index/category/{$list.category_id}/tag/{$list.defualt_tag_id}/id/{$list.id}.html" target="_self">{$list.title}</a>
+        </volist>
+    </div>
+</div>

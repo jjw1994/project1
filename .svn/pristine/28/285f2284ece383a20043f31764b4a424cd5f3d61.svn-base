@@ -1,0 +1,23 @@
+<div class="setting-wrap">
+	<form>
+		<div class="info-line">
+			<label class="lable-name">当前密码</label>
+			<div class="info-text">
+				<input type="password" class="info-input" placeholder="请输入当前密码">
+			</div>
+		</div>
+		<div class="info-line">
+			<label class="lable-name">新密码</label>
+			<div class="info-text">
+				<input type="password" class="info-input" placeholder="请输入密码">
+			</div>
+		</div>
+		<div class="info-line">
+			<label class="lable-name">确认密码</label>
+			<div class="info-text">
+				<input type="password" class="info-input" placeholder="请输入密码">
+			</div>
+		</div>
+		<input type="submit" value="保存" class="sava-pwd">
+	</form>
+</div>

@@ -1,0 +1,27 @@
+<div class="article">
+    <h1 class="article-title">{$article.title}</h1>
+    <div class="article-tag">
+        <volist name="arr_tag_name" id="tag_name">
+            <span class="tag-item">{$tag_name}</span>
+        </volist>
+    </div>
+    <if condition="$article.description neq ''">
+        <p class="article-description">概述：{$article.description}</p>
+    </if>
+    <div class="author">
+        <img src="__ROOT__{$article.userheadimg}" alt="author"/>
+        <span class="name">{$article.username}</span>
+        <span class="time">{$article.time}</span>
+    </div>
+    <div class="article-content">
+        <div id="test-editormd-view">
+            <textarea style="display:none;">{$article.content}</textarea>
+        </div>
+    </div>
+    <div class="about-views">
+        <span class="views">浏览：{$article.view}</span>
+        <span class="like">赞：{$article.like}</span>
+        <span class="collect">收藏：{$article.bookmark}</span>
+        <span class="replay">回复：{$article.comment}</span>
+    </div>
+</div>

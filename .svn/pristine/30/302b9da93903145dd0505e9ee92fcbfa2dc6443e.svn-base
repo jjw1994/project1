@@ -1,0 +1,71 @@
+<?php
+/**
+ *  +----------------------------------------------------------------------
+ *  | LSGOPHPFileInfo
+ *  +----------------------------------------------------------------------
+ *  | Copyright (c) LSGOGroup
+ *  +----------------------------------------------------------------------
+ *  | Author: AidanDai
+ *  +----------------------------------------------------------------------
+ *  | Date: 2015/9/12
+ *  +----------------------------------------------------------------------
+ *  | Time: 11:23
+ *  +----------------------------------------------------------------------
+ */
+
+namespace Blog\Controller;
+/**
+ * 前台首页控制器
+ * 主要获取首页聚合数据
+ */
+class IndexController extends BaseController
+{
+
+    /**
+     * LSGOPHPFunctionInfo
+     * function introduce:系统首页
+     * @param null
+     * @return null
+     * @author Aidan Dai
+     */
+    public function index()
+    {
+        //main menu
+        $channel = new \Common\Model\ChannelModel();
+        $menu = $channel->getMenu("Blog");
+        $this->assign('menu', $menu);
+
+        $category = I('get.category') ? I('get.category') : 2;
+        //blog category
+        $cate= D("Category");
+        $blogNav = $cate->getCategory($category);
+        $this->assign('blogNav', $blogNav);
+
+        //blog category defualt tag
+        $catelogo = $cate->getCategoryIcon($category);
+        $this->assign('catelogo', $catelogo);
+
+        //blog tag
+        $BlogArticleTag = D("BlogArticleTag");
+        $tag = $BlogArticleTag->getTag($category);
+        $this->assign('tags', $tag);
+
+        //blog category tag defualt articles
+        $document = D("Document");
+        $article = $document->DefualtArticles($category);
+        $this->assign('length', $article['count']);
+        $this->assign('articles', $article['data']);
+
+        //mouseover tag or click change(ajax)
+        if (IS_POST) {
+            $post = I('post.');
+
+            $document = D("Document");
+            $result = $document->changeArticle($post, 5);
+            $this->ajaxReturn($result);
+        }
+
+        $this->assign("cate",I('get.category'));
+        $this->display();
+    }
+}

@@ -1,0 +1,48 @@
+<!--header-->
+<header>
+    <div class="header-warpper">
+        <div id="logo">
+            <a class="logo" href="__ROOT__/index.php?s=/Blog/Index/index.html" target="_self"></a>
+        </div>
+        <nav class="all-nav">
+            <ul id="menu">
+                <volist name="menu" id="menu">
+                    <li class="{$menu.class}">
+                        <a href="__ROOT__/index.php?s=/{$menu.url}.html" target="_self">{$menu.title}</a>
+                    </li>
+                </volist>
+                <?php
+                        $map['username'] = cookie('username') ?  cookie('username') : session('username');
+                        $ucenter_member = D('ucenter_member');
+                        $picture = D('picture');
+                        $userInfo = $ucenter_member->where($map)->field('username,head_picture_id')->find();
+                        $map1['id'] = $userInfo['head_picture_id'];
+                        $userInfo['headimgurl'] = $picture->where($map1)->getField('path');
+                        unset($userInfo['head_picture_id']);
+                ?>
+                <if condition="session('username') or cookie('username')">
+                    <div class="user-logo">
+                        <a href="__ROOT__/index.php?s=/Home/User/index.html" target="_self">
+                            <img src="__ROOT__{$userInfo['headimgurl']}" alt="userheadimg" />
+                        </a>
+                        <div class="user-info">
+                            <div class="user-logo-top">
+                                <img src="__ROOT__{$userInfo['headimgurl']}" alt="userheadimg" />
+                                <span class="username">{$userInfo['username']}</span>
+                            </div>
+                            <div class="other-info">
+                                <a href="__ROOT__/index.php?s=/Home/User/setprofile.html" target="_self">个人设置</a>
+                                <a href="__ROOT__/index.php?s=/Home/User/logout.html" target="_self">退出</a>
+                            </div>
+                        </div>
+                    </div>
+                    <else />
+                    <li class="user">
+                        <a href="__ROOT__/index.php?s=/Home/User/login.html" target="_self">登录 | 注册</a>
+                    </li>
+                </if>
+            </ul>
+        </nav>
+    </div>
+</header>
+<!--/header-->

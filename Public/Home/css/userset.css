@@ -1,0 +1,287 @@
+@charset "Utf-8";
+.info-body {
+  width: 1000px;
+  height: 620px;
+  margin: 0 auto;
+  position: relative;
+  margin-top: 25px;
+}
+.info-nav {
+  list-style: none;
+  width: 310px;
+  float: left;
+}
+.person-info {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.13);
+  width: 210px;
+  height: 59px;
+  line-height: 59px;
+  padding-left: 50px;
+  border-left: -1px;
+}
+.set-picture {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.13);
+  width: 210px;
+  height: 59px;
+  line-height: 59px;
+  padding-left: 50px;
+  border-left: -1px;
+}
+.mail-test {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.13);
+  width: 210px;
+  height: 59px;
+  line-height: 59px;
+  padding-left: 50px;
+  border-left: -1px;
+}
+.change-pwd {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.13);
+  width: 210px;
+  height: 59px;
+  line-height: 59px;
+  padding-left: 50px;
+  border-left: -1px;
+  border: transparent;
+}
+.person-info:hover {
+  border-left: 2px solid #be3948;
+  margin-left: -2px;
+}
+.mail-test:hover {
+  border-left: 2px solid #be3948;
+  margin-left: -2px;
+}
+.set-picture:hover {
+  border-left: 2px solid #be3948;
+  margin-left: -2px;
+}
+.change-pwd:hover {
+  border-left: 2px solid #be3948;
+  margin-left: -2px;
+}
+.setting-wrap {
+  position: relative;
+  width: 690px;
+  height: 502px;
+  left: 310px;
+  padding: 25px 0 20px 40px;
+}
+.info-line {
+  position: relative;
+  width: 689px;
+  height: 70px;
+}
+.lable-name {
+  position: absolute;
+  left: 0px;
+  width: 120px;
+  height: 50px;
+  line-height: 50px;
+  color: rgba(0, 0, 0, 0.66);
+  text-align: right;
+}
+.info-text {
+  position: absolute;
+  left: 128px;
+}
+.info-input {
+  width: 400px;
+  height: 40px;
+  border: 1px solid #ccc;
+  outline: none;
+  padding-left: 17px;
+  font-size: 15px;
+}
+.info-input:focus {
+  border: 1px solid rgba(93, 230, 10, 0.66);
+}
+.info-job {
+  width: 419px;
+  height: 40px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+option {
+  display: block;
+  padding: 0px 2px 1px;
+  white-space: pre;
+  min-height: 1.2em;
+}
+.info-province {
+  margin-right: 4px;
+  height: 40px;
+  width: 135px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+}
+.info-city {
+  margin-right: 4px;
+  height: 40px;
+  width: 135px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+}
+.info-area {
+  margin-right: 4px;
+  height: 40px;
+  width: 135px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+}
+.sex-select {
+  margin-top: 15px;
+}
+.info-sex {
+  margin-left: 18px;
+}
+.state-massage {
+  border: 1px solid #d0d6d9;
+  width: 400px;
+  height: 126px;
+  line-height: 1.6em;
+  font-size: 14px;
+  padding: 7px;
+  resize: none;
+  outline: none;
+}
+.state-massage:focus {
+  border: 1px solid rgba(93, 230, 10, 0.66);
+}
+.sava-data {
+  position: absolute;
+  bottom: 15px;
+  right: 146px;
+  color: #fff;
+  font-size: 14px;
+  border: 0px;
+  outline: none;
+  background-color: #39b94e;
+  height: 40px;
+  line-height: 40px;
+  width: 416px;
+  cursor: pointer;
+  text-align: center;
+}
+.sava-data:hover {
+  background-color: #329041;
+}
+.user-picture {
+  position: absolute;
+  left: 111px;
+  top: 116px;
+  width: 220px;
+  height: 220px;
+}
+.up-picture {
+  position: absolute;
+  right: 128px;
+  top: 295px;
+}
+.avator-btn-fake {
+  width: 220px;
+  height: 40px;
+  line-height: 40px;
+  display: block;
+  color: #fff;
+  background: #363d40;
+  text-align: center;
+}
+.up-picture input {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  font-size: 50px;
+  background: none;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  cursor: pointer;
+}
+.setting-verify {
+  padding: 30px 60px 120px;
+  text-align: center;
+}
+.present-title {
+  position: absolute;
+  left: -60px;
+  font-size: 18px;
+  width: 740px;
+  height: 27px;
+  margin-bottom: 15px;
+}
+.present-mail {
+  position: absolute;
+  left: -60px;
+  font-size: 18px;
+  width: 740px;
+  height: 27px;
+  margin-bottom: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  padding-left: -15px;
+  top: 103px;
+}
+.test-state {
+  position: absolute;
+  left: -60px;
+  font-size: 18px;
+  width: 740px;
+  height: 27px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  top: 155px;
+  color: #fcb700;
+}
+.submit-mail {
+  position: absolute;
+  top: 200px;
+  left: 155px;
+  width: 310px;
+}
+.send-mail {
+  width: 160px;
+  height: 40px;
+  line-height: 40px;
+  background-color: #39b94e;
+  border: 0px;
+  color: #fff;
+  outline: none;
+}
+.change-mail {
+  width: 160px;
+  height: 40px;
+  line-height: 40px;
+  background-color: #39b94e;
+  border: 0px;
+  color: #fff;
+  outline: none;
+  width: 140px;
+  background-color: #58b9e6;
+  margin-left: 5px;
+}
+.send-mail:hover {
+  background-color: #2A8C3A;
+}
+.change-mail:hover {
+  background-color: #228CBD;
+}
+.sava-pwd {
+  position: absolute;
+  bottom: 15px;
+  right: 146px;
+  color: #fff;
+  font-size: 14px;
+  border: 0px;
+  outline: none;
+  background-color: #39b94e;
+  height: 40px;
+  line-height: 40px;
+  width: 416px;
+  cursor: pointer;
+  text-align: center;
+  bottom: 257px;
+}
+.sava-pwd:hover {
+  background-color: #329041;
+}

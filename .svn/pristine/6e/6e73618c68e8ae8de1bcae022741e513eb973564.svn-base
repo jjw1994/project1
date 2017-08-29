@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-hans">
+<head>
+    <meta charset="utf-8" />
+    <title>LSGO-以大多数人的努力程度之低，根本轮不到拼天赋...</title>
+    <meta name="description" content="LSGOgroup-MarkDown"/>
+    <meta name="keywords" content="LSGOgroup-MarkDown"/>
+    <meta name="author" content="Aidan Dai, webaidandai@gmail.com, www.aidandai.com"/>
+    <meta name="robots" content="all"/>
+    <link rel="stylesheet" href="__ROOT__/mdeditor/write/css/style.css" />
+    <link rel="stylesheet" href="__ROOT__/mdeditor/css/editormd.css" />
+    <link rel="shortcut icon" href="__ROOT__/Public/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="__ROOT__/mdeditor/write/css/my-style.css" />
+</head>
+<body>
+<div id="layout">
+    <div id="mdeditor-top">
+        <header id="mdeditor-header">
+            <div class="description">
+                <input type="text" name="blog-description" placeholder="概述">
+            </div>
+            <notempty name="tag">
+                <div class="tag">
+                    <div class="controls">
+                        <volist name="tag" id="tag">
+                            <div class='checkbox'>
+                                <input class='tag-item' type="checkbox" value="{$tag.id}">{$tag.tag_name}
+                            </div>
+                        </volist>
+                    </div>
+                    <label class="item-label">标签
+                        <span class="check-tips">（*必填）</span>
+                    </label>
+                </div>
+            </notempty>
+        </header>
+        <div id="mdeditor-title">
+            <input type="text" name="blog-title" placeholder="文章标题（*必填）">
+            <div class="btns">
+                <button id="preview-btn">在线预览</button>
+                <button id="submit-btn">发表博客</button>
+            </div>
+        </div>
+        <input type="hidden" name="id" value="{$info.id|default=''}"/>
+        <input type="hidden" name="pid" value="{$info.pid|default=''}"/>
+        <input type="hidden" name="model_id" value="{$info.model_id|default=''}"/>
+        <input type="hidden" name="group_id" value="{$info.group_id|default=''}"/>
+        <input type="hidden" name="category_id" value="{$info.category_id|default=''}">
+        <input type="hidden" class="text input-large" name="tag_ids" value="">
+        <input type="hidden" class="text input-large tag" name="defualt_tag_id" value="">
+    </div>
+    <div id="test-editormd"></div>
+</div>
+<script src="__ROOT__/mdeditor/write/js/jquery.min.js"></script>
+<script src="__ROOT__/mdeditor/editormd.js"></script>
+<script type="text/javascript">
+    // edtior.md 配置
+    var testEditor;
+    $(function() {
+        testEditor = editormd("test-editormd", {
+            width: "100%",
+            height: NaN,
+            path : "__ROOT__/mdeditor/lib/",
+            theme : "dark",
+            previewTheme : "dark",
+            editorTheme : "pastel-on-dark",
+            codeFold : true,
+            placeholder : "写博客（*必填）...",
+            //syncScrolling : false,
+            saveHTMLToTextarea : true,    // 保存 HTML 到 Textarea
+            searchReplace : true,
+            //watch : false,                // 关闭实时预览
+            htmlDecode : "style,script,iframe|on*",            // 开启 HTML 标签解析，为了安全性，默认不开启
+            //toolbar  : false,             //关闭工具栏
+            //previewCodeHighlight : false, // 关闭预览 HTML 的代码块高亮，默认开启
+            emoji : true,
+            taskList : true,
+            tocm            : true,         // Using [TOCM]
+            tex : true,                   // 开启科学公式TeX语言支持，默认关闭
+            flowChart : true,             // 开启流程图支持，默认关闭
+            sequenceDiagram : true,       // 开启时序/序列图支持，默认关闭,
+            //dialogLockScreen : false,   // 设置弹出层对话框不锁屏，全局通用，默认为true
+            //dialogShowMask : false,     // 设置弹出层对话框显示透明遮罩层，全局通用，默认为true
+            //dialogDraggable : false,    // 设置弹出层对话框不可拖动，全局通用，默认为true
+            //dialogMaskOpacity : 0.4,    // 设置透明遮罩层的透明度，全局通用，默认值为0.1
+            //dialogMaskBgColor : "#000", // 设置透明遮罩层的背景颜色，全局通用，默认为#fff
+            imageUpload : true,
+            imageFormats : ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
+            imageUploadURL : "__ROOT__/mdeditor/write/php/upload.php?test=dfdf",
+
+            /*
+             上传的后台只需要返回一个 JSON 数据，结构如下：
+             {
+             success : 0 | 1,           // 0 表示上传失败，1 表示上传成功
+             message : "提示的信息，上传成功或上传失败及错误信息等。",
+             url     : "图片地址"        // 上传成功时才返回
+             }
+             */
+//                        onload : function() {
+            //this.fullscreen();
+            //this.unwatch();
+            //this.watch().fullscreen();
+
+            //this.setMarkdown("#PHP");
+            //this.width("100%");
+            //this.height(480);
+            //this.resize("100%", 640);
+//                        }
+        });
+
+        $("#preview-btn").bind('click', function() {
+            testEditor.previewing();
+        });
+    });
+    // 博客其他参数
+    $(function(){
+        //生成标签
+        $('.tag-item').click(function(){
+            var stTag,
+                    arTag = [];
+            $.each( $("input:checked.tag-item"),function(index,checkbox){
+                arTag.push($(checkbox).val());
+            });
+            stTag = arTag[0];
+            $("input[name=defualt_tag_id]").val(stTag);
+            $("input[name=tag_ids]").val(arTag.join(','));
+        });
+        $("#submit-btn").bind('click', function() {
+            var post = {
+                title: $("input[name=blog-title]").val(),
+                description: $("input[name=blog-description]").val(),
+                content: testEditor.getValue(),
+                tag_ids: $("input[name=tag_ids]").val(),
+                defualt_tag_id: $("input[name=defualt_tag_id]").val(),
+                pid: $("input[name=pid]").val(),
+                model_id: $("input[name=model_id]").val(),
+                category_id: $("input[name=category_id]").val(),
+                mdeditor: 1,
+            }
+            if(!post.title.length){
+                alert('标题必填！');
+            }else if(!post.content.length){
+                alert('内容必填！');
+            }else if(!post.tag_ids.length){
+                alert('标签必填！');
+            }else{
+                console.log(post);
+                $.post(
+                    "__ROOT__/admin.php?s=/Article/update.html",
+                    post,
+                    function(data){
+                        if(data.status){
+                            window.location.href = "__ROOT__/admin.php?s=/Article/index/cate_id/" + $("input[name=category_id]").val() + ".html";
+                        }else{
+                            alert(data.info);
+                        }
+                    }
+                );
+            }
+        });
+    });
+</script>
+</body>
+</html>

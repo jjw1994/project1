@@ -1,0 +1,74 @@
+body{
+	background: rgb(245,248,249);
+}
+.user-nav{
+  width: 100%;
+  height: 40px;
+  background-color: #333;
+}
+.user-title{
+	line-height: 40px;
+}
+.nav-main{
+	position: relative;
+	width: 1000px;
+	margin: 0 auto;
+	color: #fff;
+}
+.setlist{
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.setlist li{
+	float: left;
+	height: 40px;
+	width: 80px;
+	box-shadow: 0 0px 2px rgb(0,0,0);
+	cursor: pointer;
+}
+.go-home{
+	background-color: rgb(183, 213, 171);
+}
+.mention-me{
+	background-color: rgb(128, 189, 149);
+	position: relative;
+}
+.mention-me>a>span{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	font-size: 14px;
+	background: red;
+	line-height: 20px;
+	text-align: center;
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	border-radius: 10px;
+}
+.letter-me{
+	background-color: rgb(91, 166, 137);
+}
+.collect-me{
+	background-color: rgb(58, 137, 120);
+}
+.set-me{
+	background-color: rgb(42, 126, 106);
+}
+.seticon{
+	color: #fff;
+	line-height: 40px;
+	font-size: 20px;
+	margin-left: 30px;
+}
+.eite{
+	font-size: 24px;
+  font-weight: 600;
+}
+.user-section{
+	width: 1000px;
+	margin: 0 auto;
+	position: relative;
+	margin-top: 10px;
+}

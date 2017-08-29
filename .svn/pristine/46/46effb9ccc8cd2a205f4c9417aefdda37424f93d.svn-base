@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <include file="Public/head"/>
+
+    <!--private head-->
+    <title>LSGO-以大多数人的努力程度之低，根本轮不到拼天赋...</title>
+    <meta name="description" content="lsgogroup"/>
+    <meta name="keywords" content="lsgogroup"/>
+    <meta name="author" content="Aidan Dai, webaidandai@gmail.com, www.aidandai.com"/>
+    <link rel="stylesheet" type="text/css" href="__COMMON__/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/login-register.css"/>
+    <!--/private head-->
+</head>
+<body>
+    <div class="lr-bg1"></div>
+    <div class="lr-big-title">
+        <h1>这么晚才来注册</h1>
+        <h1>你是去拯救地球了嘛！？</h1>
+    </div>
+    <!--login-register-->
+    <div class="login-register-box">
+        <div class="lr-title">
+            <span class="login-open lr-title-on">登录</span>
+            <span class="register-open">注册</span>
+        </div>
+        <div id="login">
+            <div name="login" class="login-box">
+                <p class="login-error-tip error"></p>
+                <div class="group-input">
+                    <input class='l-email' type="text" name="email" placeholder="请输入登录邮箱">
+                    <p class="l-email-tip error">
+                    </p>
+                </div>
+                <div class="group-input">
+                    <input class='l-password' type="password" name="password" placeholder="请输入密码">
+                    <p class="l-password-tip error">
+                    </p>
+                </div>
+                <div class="group-input">
+                    <div class="verify-box">
+                        <input class='l-verify' type="text" name="verify" placeholder="请输入验证码">
+                        <img class="verify-content js-verify-refresh" src="{:U('User/verify')}">
+                        <span class="verify-reload js-verify-refresh">看不清？换一张</span>
+                    </div>
+                    <p class="l-verify-tip error">
+                    </p>
+                </div>
+                <div class="login-tip">
+                    <div class="auto-login-aigin">
+                        <input type="checkbox" name="auto_login" checked value="1">
+                        <p class="auto-login-tip">
+                            下次自动登录
+                        </p>
+                    </div>
+                    <p class="forget-pwd">
+                        <a href="#" target="_self">忘记密码？</a>
+                    </p>
+                </div>
+                <button class="login-action">登 录</button>
+            </div>
+        </div>
+        <div id="register">
+            <div name="login" class="login-box">
+                <p class="register-error-tip error"></p>
+                <div class="group-input">
+                    <input class='r-email' type="text" name="email" placeholder="请输入电子邮箱地址">
+                    <p class="r-email-tip error">
+                    </p>
+                </div>
+                <div class="group-input">
+                    <input class='r-password' type="password" name="password" placeholder="6-13位密码，区分大小写，不能用空格">
+                    <p class="r-password-tip error">
+                    </p>
+                </div>
+                <div class="group-input">
+                    <input class='r-username' type="text" name="username" placeholder="昵称为2-18位，中英文、数字及下划线">
+                    <p class="r-username-tip error">
+                    </p>
+                </div>
+                <div class="group-input">
+                    <div class="verify-box">
+                        <input class='r-verify' type="text" name="verify" placeholder="请输入验证码">
+                        <img class="verify-content js-verify-refresh"  src="{:U('User/verify')}">
+                        <span class="verify-reload js-verify-refresh">看不清？换一张</span>
+                    </div>
+                    <p class="r-verify-tip error">
+                    </p>
+                </div>
+                <button class="register-action">注 册</button>
+            </div>
+        </div>
+    </div>
+    <!--/login-register-->
+    <include file="Public/var" />
+    <script type="text/javascript" src="__JS__/login-register.js"></script>
+</body>
+</html>
